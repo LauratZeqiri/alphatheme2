@@ -82,7 +82,7 @@ endif;
 </div>
 
 <script>
-      function pyetja(question) {
+  function pyetja(question) {
     var answer = question.nextElementSibling;
 
     if (answer.style.display === 'none') {
@@ -90,7 +90,7 @@ endif;
     } else {
       answer.style.display = 'none';
     }
-  }
+}
 
   </script>
 

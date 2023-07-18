@@ -25,7 +25,7 @@ if (file_exists(get_stylesheet_directory() . '/acf-export/acf-data.php')) {
 if (file_exists(get_stylesheet_directory() . '/acf-export/acf-bussines.php')) {
     include_once(get_stylesheet_directory() . '/acf-export/acf-bussines.php');
 }
-
+add_theme_support( 'html5', array('search-form'));
 add_theme_support( 'post-thumbnails' );
 
 add_action('init', 'my_remove_editor_from_post_type');
@@ -63,9 +63,80 @@ function post_type() {
 }
 add_action( 'init', 'post_type' );
 
-function enqueue_custom_scripts() {
+// function enqueue_custom_scripts() {
 
+// }
+// add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+
+
+
+function load_posts_by_ajax_callback() {
+    check_ajax_referer('load_more_posts', 'security');
+
+    $args = array(
+        'post_type' => 'bussines_post',
+        'post_status' => 'publish',
+        'orderby' => 'ID',
+        'posts_per_page' => 2,
+        'paged' => $_POST['page'],
+    );
+
+    $blog_posts = new WP_Query($args);
+    ob_start();
+
+    if ($blog_posts->have_posts()) :
+        while ($blog_posts->have_posts()) :
+            $blog_posts->the_post();
+            ?>
+            <div class="post">
+                <?php $imag = get_field('imag'); ?>
+                <?php if ($imag) : ?>
+                    <img src="<?php echo esc_url($imag['url']); ?>" alt="<?php echo esc_attr($imag['alt']); ?>" class="imag">
+                <?php endif; ?>
+                <h1><?php the_title(); ?></h1>
+
+                <?php $biznesi_text = get_field('informata'); ?>
+                <?php if ($biznesi_text) : ?>
+                    <div class="textare"><?php echo esc_html($biznesi_text); ?></div>
+                <?php endif; ?>
+                
+                <?php $biznesi_permalink = get_permalink(); ?>
+                <a href="<?php echo esc_url($biznesi_permalink); ?>" class="permalink-bus">Visit Business</a>
+            </div>
+            <?php
+        endwhile;
+        wp_reset_postdata();
+    endif;
+
+    $response = ob_get_clean();
+    echo $response;
+    wp_die(); // Terminate the AJAX request
+
+    // Ensure that there are no further actions or output after wp_die()
+    exit;
 }
-add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
+add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
+add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_callback');
+
+function blog_scripts() {
+    // Register the script
+    // wp_register_script('custom-script', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), false, true);
+
+    // Localize the script with new data
+    $script_data_array = array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'security' => wp_create_nonce('load_more_posts'),
+    );
+    wp_localize_script('custom-script', 'blog', $script_data_array);
+}
+  
+
+// add_action( 'wp_enqueue_scripts', 'blog_scripts');
+
+wp_enqueue_script('custom-script');
+
+
+// Enqueued script with localized data.
 ?>
