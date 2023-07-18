@@ -1,0 +1,25 @@
+$margin-bottom: 85px;
+$container-width: 100%;
+$max-container-width: 1100px;
+$container-margin: 50px auto;
+$table-margin-bottom: 20px;
+$cell-padding: 10px;
+
+
+.customer {
+  margin-bottom: $margin-bottom;
+  .container {
+    width: $container-width;
+    max-width: $max-container-width;
+    margin: $container-margin;
+  }
+  .customer-table {
+    width: $container-width;
+    border-collapse: collapse;
+    margin-bottom: $table-margin-bottom;
+    th,
+    td {
+      padding: $cell-padding;
+    }
+  }
+}

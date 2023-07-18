@@ -1,0 +1,32 @@
+.parallax-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.8;
+}
+
+
+.parallax-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+
+.parallax-content h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color:black;
+} 
+
+
+.parallax-content p {
+  font-size: 18px;
+  margin-bottom: 0;
+  color:black;
+} 

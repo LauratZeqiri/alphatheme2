@@ -1,0 +1,74 @@
+$green: #008000;
+$red: #FF0000;
+
+.fas.fa-thumbs-up {
+  color: $green;
+  font-size: 24px;
+  margin-right: 12px;
+//   margin-left: 350px;
+// }
+}
+
+.fas.fa-thumbs-down {
+  color: $red;
+  font-size: 24px;
+  margin-right: 12px;
+  // margin-left: 350px;
+}
+
+
+
+h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: 20px;
+}
+
+.pros,
+.cons {
+  margin-right: 50px;
+  // margin-top: 40px;
+  flex: 1;
+  // padding: 10px;
+  box-sizing: border-box;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    padding-left: 20px;
+    font-size: 16px;
+  }
+}
+
+.columns-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.cons .column {
+  width: 500px;
+  height: 43px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  background: linear-gradient(to right, $red 0%, $red 5px, rgba(255, 0, 0, 0.1) 5px, rgba(255, 0, 0, 0.1) 100%);
+}
+
+.pros .column {
+  width: 500px;
+  height: 43px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  background: linear-gradient(to right, $green 0%, $green 5px, rgba(0, 128, 0, 0.1) 5px, rgba(0, 128, 0, 0.1) 100%);
+}
+
+h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}

@@ -1,0 +1,88 @@
+.author {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#DAF5FF ;
+  }
+  
+.about-author {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    height: 150px;
+    width: 900px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.about-author-avatar{
+   
+    padding-left: 15px;
+    float: left;
+    width: 10%;
+}
+.about-author-info{
+    display: flex;
+    text-align: center;
+    padding-left: 15px;
+    float: left;
+    width: 30%;
+}
+
+.about-author-info .icons{
+    justify-content: center;
+    display: flex;
+    margin-left: -60px;
+    padding-bottom: 50px;
+}
+
+
+.description{
+    padding-bottom: 30px;
+    width: 60%;
+    float: right;
+}
+
+.avatar {
+    display: flex;
+    border-radius: 50%;
+ }
+ 
+.more-info {
+    text-decoration: none;
+    position: absolute;
+    padding-top: 5px;
+}
+
+
+.nickname {
+    display: flex;
+    padding-left: 5px;
+    padding-top: 30px;
+}
+
+
+//* Logos
+.fab.fa-facebook {
+    position: absolute;
+    display: flex;
+    padding-top: 70px;
+    
+    }
+
+
+.fab.fa-instagram {
+    
+    
+    padding-top: 70px;
+   padding-left: 22px;
+
+}
+.fab.fa-pinterest {
+    
+    padding-left: 2px;
+    padding-top: 70px;
+
+}
