@@ -2,7 +2,7 @@
 
 function alpha_script() {
     wp_enqueue_style( 'customestyle', get_template_directory_uri() . '/css/style.css', array(), '1.0.0', 'all' );
-    wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/index.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/index.js', array('jquery'));
 
 }
 add_action( 'wp_enqueue_scripts', 'alpha_script' );
@@ -35,8 +35,43 @@ remove_post_type_support( 'post', 'editor' );
 remove_post_type_support( 'page', 'editor' );
 }
 
+add_role(
+    'business',
+    ( 'Business'  ),
+    array(
+        'read'  => true,
+        'delete_posts'  => true,
+        'delete_published_posts' => true,
+        'edit_posts'   => true,
+        'publish_posts' => true,
+        'upload_files'  => true,
+        'edit_pages'  => true,
+        'edit_published_pages'  =>  true,
+        'publish_pages'  => true,
+        'delete_publishedpages' => false,
+        'edit[businesspost]'  =>  true,
+        'read[business_post]'  =>  true,
 
 
+    )
+);
+
+add_role(
+    'customer',
+    ( 'Customer'  ),
+    array(
+        'read'  => true,
+        'delete_posts'  => true,
+        'delete_published_posts' => true,
+        'edit_posts'   => true,
+        'publish_posts' => true,
+        'upload_files'  => true,
+        'edit_pages'  => true,
+        'edit_published_pages'  =>  true,
+        'publish_pages'  => true,
+        'delete_published_pages' => false, 
+    )
+);
 
 
 
@@ -63,31 +98,21 @@ function post_type() {
 }
 add_action( 'init', 'post_type' );
 
-// function enqueue_custom_scripts() {
-
-// }
-// add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
-
-
-
-
 function load_posts_by_ajax_callback() {
     check_ajax_referer('load_more_posts', 'security');
 
     $args = array(
         'post_type' => 'bussines_post',
-        'post_status' => 'publish',
-        'orderby' => 'ID',
-        'posts_per_page' => 2,
-        'paged' => $_POST['page'],
+        'post_status' => 'publish'
     );
 
     $blog_posts = new WP_Query($args);
     ob_start();
-
+    // var_dump($blog_posts);die;
     if ($blog_posts->have_posts()) :
         while ($blog_posts->have_posts()) :
             $blog_posts->the_post();
+            // var_dump($blog_posts);die;
             ?>
             <div class="post">
                 <?php $imag = get_field('imag'); ?>
@@ -129,13 +154,13 @@ function blog_scripts() {
         'ajaxurl' => admin_url('admin-ajax.php'),
         'security' => wp_create_nonce('load_more_posts'),
     );
-    wp_localize_script('custom-script', 'blog', $script_data_array);
+    wp_localize_script('customjs', 'blog', $script_data_array);
 }
   
 
-// add_action( 'wp_enqueue_scripts', 'blog_scripts');
+add_action( 'wp_enqueue_scripts', 'blog_scripts');
 
-wp_enqueue_script('custom-script');
+// wp_enqueue_script('custom-script');
 
 
 // Enqueued script with localized data.

@@ -1,5 +1,4 @@
 .load-more {
-    margin-right: 400px;
     margin-top: 35px;
     text-align: center;
     margin-bottom: 40px;
@@ -22,18 +21,12 @@
     }
   }
   
-  .entry-content {
-    margin-top: 40px;
-    margin-left: 50px;
-  }
-  
   .post {
     margin-bottom: 36px;
     display: flex;
     align-items: center;
     justify-content: space-between; /* Add this line */
     flex-direction: row;
-    width: 60%;
     padding: 20px;
     border-radius: 10px;
     background-color: #f9f6f2;
