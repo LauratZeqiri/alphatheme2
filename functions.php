@@ -35,8 +35,43 @@ remove_post_type_support( 'post', 'editor' );
 remove_post_type_support( 'page', 'editor' );
 }
 
+add_role(
+    'business',
+    ( 'Business'  ),
+    array(
+        'read'  => true,
+        'delete_posts'  => true,
+        'delete_published_posts' => true,
+        'edit_posts'   => true,
+        'publish_posts' => true,
+        'upload_files'  => true,
+        'edit_pages'  => true,
+        'edit_published_pages'  =>  true,
+        'publish_pages'  => true,
+        'delete_publishedpages' => false,
+        'edit[businesspost]'  =>  true,
+        'read[business_post]'  =>  true,
 
 
+    )
+);
+
+add_role(
+    'customer',
+    ( 'Customer'  ),
+    array(
+        'read'  => true,
+        'delete_posts'  => true,
+        'delete_published_posts' => true,
+        'edit_posts'   => true,
+        'publish_posts' => true,
+        'upload_files'  => true,
+        'edit_pages'  => true,
+        'edit_published_pages'  =>  true,
+        'publish_pages'  => true,
+        'delete_published_pages' => false, 
+    )
+);
 
 
 
