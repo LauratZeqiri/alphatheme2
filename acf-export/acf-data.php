@@ -853,6 +853,44 @@ acf_add_local_field_group(array(
 					'max' => '',
 				),
 				
+				'layout_64a809a3b4c08' => array(
+					'key' => 'layout_64a809a3b4c08',
+					'name' => 'page_cards',
+					'label' => 'Page Cards',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_64a809bb2bb38',
+							'label' => 'Page',
+							'name' => 'get_page',
+							'type' => 'relationship',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'post_type' => array(
+								0 => 'page',
+							),
+							'taxonomy' => '',
+							'filters' => array(
+								0 => 'search',
+							),
+							'elements' => array(
+								0 => 'featured_image',
+							),
+							'min' => '',
+							'max' => '',
+							'return_format' => 'object',
+						),
+					),
+					'min' => '',
+					'max' => '',
+				),
+				
             ),
 
 
