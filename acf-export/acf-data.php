@@ -742,13 +742,13 @@ acf_add_local_field_group(array(
 				),
 				'layout_649e69388bcf5' => array(
 					'key' => 'layout_649e69388bcf5',
-					'name' => 'testimonials',
-					'label' => 'testimonials',
+					'name' => 'Testimonials',
+					'label' => 'Testimonials',
 					'display' => 'row',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_64a286ccd49ef',
-							'label' => 'testimonials_items',
+							'label' => 'Testimonials',
 							'name' => 'testimonials_items',
 							'type' => 'repeater',
 							'instructions' => '',
