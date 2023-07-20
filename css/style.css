@@ -1141,6 +1141,141 @@ body {
 .row {
   padding-bottom: 18px; }
 
+  .card-image {
+    width: 300px;
+    height: 170px;
+    border-radius: 8%;
+    margin: auto 5px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    margin: 0px auto;
+    box-sizing: border-box;
+    margin-top: 2%;
+  }
+  
+  .row-cards {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .justify-flex-start {
+    justify-content: flex-start;
+  }
+  
+  .justify-flex-end {
+    justify-content: flex-end;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .justify-space-between {
+    justify-content: space-between;
+  }
+  
+  .justify-space-around {
+    justify-content: space-around;
+  }
+  
+  .module-title {
+    font-size: 2rem;
+    padding-bottom: 0.75rem;
+    font-weight: bold;
+    font-family: Inter;
+    margin-bottom: -20px;
+    color: black;
+  }
+  
+  .card {
+    display: block;
+    padding: 1.125rem;
+    padding-bottom: 25px;
+    width: 310px;
+    margin: 1.5rem auto;
+    height: 350px;
+    box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  .card .card-title {
+    font-size: 1.5rem;
+    padding-bottom: 0.75rem;
+    font-weight: bold;
+    font-family: Inter;
+    color: #111d2c;
+  }
+  .card .card-body {
+    font-size: 1rem;
+    color: #7f8a97;
+    font-family: Inter;
+  }
+  
+  .text-lime {
+    color: #53d373;
+    font-weight: bold;
+  }
+  
+  .text-light-gray {
+    color: #111d2c;
+    font-weight: bold;
+  }
+  
+  .btn-lime {
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: 0.75rem 6.75rem;
+    border-radius: 20px;
+    background-color: #53d373;
+    text-decoration: none;
+    margin: 15px auto;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .btn-lime:hover {
+    background-color: #37cc5c;
+  }
+  
+  .btn-light-gray {
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    padding: 0.75rem 6.75rem;
+    border-radius: 20px;
+    background-color: #111d2c;
+    text-decoration: none;
+    margin: 15px auto;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  .btn-light-gray:hover {
+    background-color: #070c12;
+  }
+  
+  .swiper {
+    width: 100%;
+    margin: 5px 30px;
+    box-sizing: border-box;
+    margin-right: 2%;
+  }
+  
+  .container .swiper-button-prev {
+    left: -45px;
+  }
+  
+  .container .swiper-button-next {
+    right: -45px;
+  }
+
 .h1-testimonials {
   padding-top: 30px;
   color: #000;

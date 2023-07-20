@@ -33,7 +33,7 @@ $pages = get_sub_field('get_page');
 
                                                 <?php
                                                 $content = $page->post_content;
-                                                $short_content = wp_trim_words( $content, 6, ' ...' );
+                                                $short_content = wp_trim_words( $content, 5, ' ...' );
                                                 echo '<h4>'. $short_content .'</h4>';
                                                 ?>  
 
