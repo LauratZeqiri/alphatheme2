@@ -123,7 +123,7 @@ acf_add_local_field_group(array(
 								0 => 'featured_image',
 							),
 							'min' => '',
-							'max' => '4',
+							'max' => '',
 							'return_format' => 'object',
 						),
 					),

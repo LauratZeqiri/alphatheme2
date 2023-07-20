@@ -107,32 +107,16 @@ function load_posts_by_ajax_callback() {
     );
 
     $blog_posts = new WP_Query($args);
-    ob_start();
-    // var_dump($blog_posts);die;
-    if ($blog_posts->have_posts()) :
-        while ($blog_posts->have_posts()) :
-            $blog_posts->the_post();
-            // var_dump($blog_posts);die;
+        ob_start();
             ?>
             <div class="post">
-                <?php $imag = get_field('imag'); ?>
-                <?php if ($imag) : ?>
-                    <img src="<?php echo esc_url($imag['url']); ?>" alt="<?php echo esc_attr($imag['alt']); ?>" class="imag">
-                <?php endif; ?>
-                <h1><?php the_title(); ?></h1>
-
-                <?php $biznesi_text = get_field('informata'); ?>
-                <?php if ($biznesi_text) : ?>
-                    <div class="textare"><?php echo esc_html($biznesi_text); ?></div>
-                <?php endif; ?>
-                
-                <?php $biznesi_permalink = get_permalink(); ?>
-                <a href="<?php echo esc_url($biznesi_permalink); ?>" class="permalink-bus">Visit Business</a>
+                <img src="<?php echo $featured_image; ?>" class="toplist_thumbnail">
+                <h1>Titulli</h1>
+                <div class="textare">Oneliner</div>
+                <a href="<?php echo $permalink; ?>" class="permalink-bus">Visit Business</a>
             </div>
             <?php
-        endwhile;
         wp_reset_postdata();
-    endif;
 
     $response = ob_get_clean();
     echo $response;

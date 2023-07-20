@@ -1077,6 +1077,11 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 20px; }
+  .testimonial-wrapper .testimonial {
+    margin-bottom: 30px;
+    margin-right: 20px; }
+    .testimonial-wrapper .testimonial:nth-child(3n) {
+      margin-right: 0; }
   .testimonial-wrapper .card {
     width: 280px;
     border-radius: 16px;
@@ -1096,7 +1101,13 @@ body {
         height: 130px;
         object-fit: cover; }
     .testimonial-wrapper .card .user-content {
-      margin-top: 20px; }
+      margin-top: 20px;
+      color: #000;
+      font-family: Inter;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 23px; }
       .testimonial-wrapper .card .user-content h5 {
         color: #000;
         text-align: center;
@@ -1119,141 +1130,16 @@ body {
         width: 97%;
         text-align: justify;
         margin: 0 auto; }
+    .testimonial-wrapper .card .ratings {
+      margin-top: 20px;
+      color: gold;
+      display: flex;
+      justify-content: center; }
+      .testimonial-wrapper .card .ratings i {
+        font-size: 16px; }
 
 .row {
   padding-bottom: 18px; }
-
-  .card-image {
-    width: 300px;
-    height: 170px;
-    border-radius: 8%;
-    margin: auto 5px;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    width: 100%;
-    margin: 0px auto;
-    box-sizing: border-box;
-    margin-top: 2%;
-  }
-  
-  .row-cards {
-    display: flex;
-    flex-flow: row wrap;
-  }
-  
-  .justify-flex-start {
-    justify-content: flex-start;
-  }
-  
-  .justify-flex-end {
-    justify-content: flex-end;
-  }
-  
-  .justify-center {
-    justify-content: center;
-  }
-  
-  .justify-space-between {
-    justify-content: space-between;
-  }
-  
-  .justify-space-around {
-    justify-content: space-around;
-  }
-  
-  .module-title {
-    font-size: 2rem;
-    padding-bottom: 0.75rem;
-    font-weight: bold;
-    margin-bottom: -20px;
-    color: black;
-  }
-  
-  .card {
-    display: block;
-    padding: 1.125rem;
-    padding-bottom: 25px;
-    width: 310px;
-    margin: 1.5rem auto;
-    height: 350px;
-    box-shadow: 1px 3px 5px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
-  .card .card-title {
-    font-size: 1.5rem;
-    padding-bottom: 0.75rem;
-    font-weight: bold;
-    color: #111d2c;
-  }
-  .card .card-body {
-    font-size: 1rem;
-    color: #7f8a97;
-  }
-  
-  .text-lime {
-    color: #53d373;
-    font-weight: bold;
-  }
-  
-  .text-light-gray {
-    color: #111d2c;
-    font-weight: bold;
-  }
-  
-  .btn-lime {
-    cursor: pointer;
-    display: inline-block;
-    border: 0;
-    padding: 0.75rem 6.75rem;
-    border-radius: 20px;
-    background-color: #53d373;
-    text-decoration: none;
-    margin: 15px auto;
-    font-weight: bold;
-    font-size: 17px;
-  }
-  .btn-lime:hover {
-    background-color: #37cc5c;
-  }
-  
-  .btn-light-gray {
-    cursor: pointer;
-    display: inline-block;
-    border: 0;
-    padding: 0.75rem 6.75rem;
-    border-radius: 20px;
-    background-color: #111d2c;
-    text-decoration: none;
-    margin: 15px auto;
-    font-weight: bold;
-    font-size: 17px;
-  }
-  .btn-light-gray:hover {
-    background-color: #070c12;
-  }
-  
-  .swiper {
-    width: 100%;
-    margin: 5px 30px;
-    box-sizing: border-box;
-    margin-right: 2%;
-  }
-  
-  .container .swiper-button-prev {
-    left: -45px;
-  }
-  
-  .container .swiper-button-next {
-    right: -45px;
-  }
 
 .h1-testimonials {
   padding-top: 30px;
@@ -1349,14 +1235,14 @@ body {
   .post:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
-  .post .imag-imag {
+  .post .toplist_thumbnail {
     margin-bottom: 10px;
     width: 90px;
     height: 90px;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out; }
-    .post .imag-imag:hover {
+    .post .toplist_thumbnail:hover {
       transform: scale(1.1); }
   .post-content {
     flex-grow: 1; }
