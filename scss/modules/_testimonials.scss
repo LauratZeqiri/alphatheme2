@@ -12,15 +12,15 @@
     justify-content: space-between;
     margin-top: 20px;
 
-    // .testimonial {
+     .testimonial {
  
-    //   margin-bottom: 30px;
-    //   margin-right: 20px;
+       margin-bottom: 30px;
+       margin-right: 20px;
 
-    //   &:nth-child(3n) {
-    //     margin-right: 0;
-    //   }
-    // }
+       &:nth-child(3n) {
+         margin-right: 0;
+       }
+     }
 
 
 
@@ -51,12 +51,12 @@ overflow: hidden;
 
       .user-content {
         margin-top: 20px;
-        // color: #000;
-        // font-family: Inter;
-        // font-size: 16px;
-        // font-style: normal;
-        // font-weight: 400;
-        // line-height: 23px;
+         color: #000;
+         font-family: Inter;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 23px;
 
         h4 {
           color: #000;
@@ -106,16 +106,16 @@ overflow: hidden;
         }
       }
 
-      // .ratings {
-      //   margin-top: 20px;
-      //   color: gold;
-      //   display: flex;
-      //   justify-content: center;
+        .ratings {
+          margin-top: 20px;
+        color: gold;
+         display: flex;
+         justify-content: center;
 
-      //   i {
-      //     font-size: 16px; 
-      //   }
-      // }
+        i {
+       font-size: 16px; 
+        }
+      }
     }
   }
   .row{

@@ -106,63 +106,37 @@ function load_posts_by_ajax_callback() {
     $args = array(
         'post_type' => 'bussines_post',
         'post_status' => 'publish',
-        'posts_per_page' => 4,
-        'paged' => $current_page // Add paged parameter to fetch the appropriate page
+        'orderby' => 'ID',
+        'posts_per_page' => 2,
+        'paged' => $_POST['page'],
     );
 
     $blog_posts = new WP_Query($args);
-
     ob_start();
-    $count = 0; // Initialize count outside the while loop
-    if ($blog_posts->have_posts()) {
-        while ($blog_posts->have_posts()) {
+
+    if ($blog_posts->have_posts()) :
+        while ($blog_posts->have_posts()) :
             $blog_posts->the_post();
-            
-            // Assuming $featured_image, $title, $oneliner, and $permalink are post-related values
-            $featured_image = get_the_post_thumbnail_url();
-            $id = $business->ID;
-            $title = get_the_title();
-            $oneliner = get_field('informata', $id);
-            $oneliner = !empty($oneliner) ? $oneliner : 'Default Text'; // Set a default value if the custom field is empty
-
-            $permalink = get_permalink();
-
-            if ($count < 1) { // Check count before displaying the post
-                ?>
-                <div class="post">
-                    <img src="<?php echo $featured_image; ?>" class="toplist_thumbnail">
-                    <h1><?= $title; ?></h1>
-                    <div class="textare"><?php echo esc_html($oneliner); ?></div>
-                    <a href="<?php echo $permalink; ?>" class="permalink-bus">Visit Business</a>
-                </div>
-                <?php
-            }
-            $count++; // Increment the count for each post displayed
-        }
-
-        wp_reset_postdata();
-
-        // Check if there are more posts on the next page
-        $args_next_page = array(
-            'post_type' => 'bussines_post',
-            'post_status' => 'publish',
-            'posts_per_page' => 4,
-            'paged' => $current_page + 1 // Next page number
-        );
-
-        $blog_posts_next_page = new WP_Query($args_next_page);
-
-        // If there are no more posts to load, hide the load more button
-        if (!$blog_posts_next_page->have_posts()) {
             ?>
-            <style type="text/css">
-                #load-more-button {
-                    display: none;
-                }
-            </style>
+            <div class="post">
+                <?php $imag = get_field('imag'); ?>
+                <?php if ($imag) : ?>
+                    <img src="<?php echo esc_url($imag['url']); ?>" alt="<?php echo esc_attr($imag['alt']); ?>" class="imag">
+                <?php endif; ?>
+                <h1><?php the_title(); ?></h1>
+
+                <?php $biznesi_text = get_field('informata'); ?>
+                <?php if ($biznesi_text) : ?>
+                    <div class="textare"><?php echo esc_html($biznesi_text); ?></div>
+                <?php endif; ?>
+                
+                <?php $biznesi_permalink = get_permalink(); ?>
+                <a href="<?php echo esc_url($biznesi_permalink); ?>" class="permalink-bus">Visit Business</a>
+            </div>
             <?php
-        }
-    }
+        endwhile;
+        wp_reset_postdata();
+    endif;
 
     $response = ob_get_clean();
     echo $response;
@@ -193,5 +167,8 @@ function blog_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'blog_scripts');
 
-// wp_enqueue_script('custom-script');
+wp_enqueue_script('custom-script');
+
+
+// Enqueued script with localized data.
 ?>
