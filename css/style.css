@@ -1270,13 +1270,6 @@ body {
   justify-content: space-between;
   margin-top: 20px;
 }
-.testimonial-wrapper .testimonial {
-  margin-bottom: 30px;
-  margin-right: 20px;
-}
-.testimonial-wrapper .testimonial:nth-child(3n) {
-  margin-right: 0;
-}
 .testimonial-wrapper .card {
   width: 285px;
   border-radius: 16px;
@@ -1302,12 +1295,6 @@ body {
 }
 .testimonial-wrapper .card .user-content {
   margin-top: 20px;
-  color: #000;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 23px;
 }
 .testimonial-wrapper .card .user-content h4 {
   color: #000;
@@ -1336,15 +1323,6 @@ body {
   line-height: 21px;
   word-spacing: 1px;
   text-align: justify;
-}
-.testimonial-wrapper .card .ratings {
-  margin-top: 20px;
-  color: gold;
-  display: flex;
-  justify-content: center;
-}
-.testimonial-wrapper .card .ratings i {
-  font-size: 16px;
 }
 
 .row {
