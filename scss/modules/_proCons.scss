@@ -18,14 +18,14 @@ $red: #FF0000;
 
 
 
-h1 {
-  // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  margin-top: 20px;
-}
+//  .quick-h1 h1 {
+//   // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+//   margin-top: 20px;
+// }
 
 .pros,
 .cons {
-  margin-right: 50px;
+  // margin-right: 50px;
   // margin-top: 40px;
   flex: 1;
   // padding: 10px;
@@ -40,6 +40,7 @@ h1 {
   p {
     padding-left: 20px;
     font-size: 16px;
+    width: 95%;
   }
 }
 
@@ -66,9 +67,9 @@ h1 {
   background: linear-gradient(to right, $green 0%, $green 5px, rgba(0, 128, 0, 0.1) 5px, rgba(0, 128, 0, 0.1) 100%);
 }
 
-h2 {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-size: 20px;
-}
+// h2 {
+//   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+//   margin-bottom: 10px;
+//   font-weight: bold;
+//   font-size: 20px;
+// }

@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                             <p class="bussiness__card--description">
-                                <?php echo implode(' ', array_slice(explode(' ', $biznesi_text), 0, 10)) . '...'; ?>
+                                <?php echo implode(' ', array_slice(explode(' ', $biznesi_text), 0, 6)) . '...'; ?>
                             </p>
                             <button class="button-btn"><a href="<?php echo $biznesi_permalink; ?>">View Business</a></button>
                         </div>

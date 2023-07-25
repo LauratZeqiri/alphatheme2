@@ -20,7 +20,7 @@
                                 <?php endif; ?>
                             </div>
                             <div class="user-content">
-                                <h5 class="mb-0"><?php echo $name; ?></h5>
+                                <h4 class="mb-0"><?php echo $name; ?></h4>
                                 <p><?php echo $comment; ?></p>
                             </div>
                             <!-- <div class="ratings">

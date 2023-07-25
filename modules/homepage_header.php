@@ -1,4 +1,3 @@
-
 <?php
 $image = null; 
 $title = null; 
@@ -17,7 +16,7 @@ if (get_row_layout() === 'homepage_header') {
     <div class="overlay"></div>
     <div class="container">
     <div class="all">
-    
+
     <div class="title">
         <?php echo $title; ?>
         <div class="p">
@@ -28,16 +27,14 @@ if (get_row_layout() === 'homepage_header') {
 
 
     <div class="div">
-        <div class="input-container">
+     <div class="input-container">
             <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
                 <input type="search" class="form-control" placeholder="Search" value="<?php echo get_search_query() ?>" name="s" title="Search" />
+                <button type="submit" class="icon-search"><i class="fa fa-search"></i></button>
             </form>
-                
     </div>
-</div>
+    </div>
 
 </div>
 </div>
 </div>
-
-

@@ -32,4 +32,6 @@ if (have_posts()) {
         <input type="submit" value="Submit">
     </form>
 </div>
+
+<?php include (get_template_directory().'/include/module.php'); ?>
 <?php get_footer();?>

@@ -19,6 +19,44 @@ acf_add_local_field_group(array(
             ),
             // prej qitu keni me shtu layouts (module)
             'layouts' => array(
+				'layout_64a809a3b4c08' => array(
+					'key' => 'layout_64a809a3b4c08',
+					'name' => 'page_cards',
+					'label' => 'Page Cards',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_64a809bb2bb38',
+							'label' => 'Page',
+							'name' => 'get_page',
+							'type' => 'relationship',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'post_type' => array(
+								0 => 'page',
+							),
+							'taxonomy' => '',
+							'filters' => array(
+								0 => 'search',
+							),
+							'elements' => array(
+								0 => 'featured_image',
+							),
+							'min' => '',
+							'max' => '',
+							'return_format' => 'object',
+						),
+					),
+					'min' => '',
+					'max' => '',
+				),
+				
 				'layout_64b105c645e48' => array(
 					'key' => 'layout_64b105c645e48',
 					'name' => 'banner_section',
@@ -123,7 +161,7 @@ acf_add_local_field_group(array(
 								0 => 'featured_image',
 							),
 							'min' => '',
-							'max' => '4',
+							'max' => '',
 							'return_format' => 'object',
 						),
 					),
@@ -241,7 +279,7 @@ acf_add_local_field_group(array(
 				'layout_64ad4245bb8c0' => array(
 					'key' => 'layout_64ad4245bb8c0',
 					'name' => 'services_cards',
-					'label' => 'services_cards',
+					'label' => 'Services Cards',
 					'display' => 'block',
 					'sub_fields' => array(
 						array(
@@ -402,7 +440,7 @@ acf_add_local_field_group(array(
 				'layout_64ac7ab3b923e' => array(
 					'key' => 'layout_64ac7ab3b923e',
 					'name' => 'business_cards',
-					'label' => 'business_cards',
+					'label' => 'Business Cards',
 					'display' => 'block',
 					'sub_fields' => array(
 						array(
@@ -685,7 +723,7 @@ acf_add_local_field_group(array(
                 'layout_649944239c9b0' => array(
 					'key' => 'layout_649944239c9b0',
 					'name' => 'carousel',
-					'label' => 'Carousel',
+					'label' => 'Gallery Carousel',
 					'display' => 'block',
 					'sub_fields' => array(
 						array(
@@ -743,12 +781,12 @@ acf_add_local_field_group(array(
 				'layout_649e69388bcf5' => array(
 					'key' => 'layout_649e69388bcf5',
 					'name' => 'testimonials',
-					'label' => 'testimonials',
+					'label' => 'Testimonials',
 					'display' => 'row',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_64a286ccd49ef',
-							'label' => 'testimonials_items',
+							'label' => 'Testimonials Items',
 							'name' => 'testimonials_items',
 							'type' => 'repeater',
 							'instructions' => '',

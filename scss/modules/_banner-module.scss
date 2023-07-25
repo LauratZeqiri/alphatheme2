@@ -2,28 +2,31 @@
 .banner-items{
     display: flex;
     justify-content: space-between;
+    padding: 30px 0px;
 }
 
 .banner-section{
     background-color: #EFF6FF;
-    height: 500px;
- display: flex;
- align-items: center;
+    height: auto;
+//  display: flex;
+//  align-items: center;
 }
 
 
 .banner-content{
-    width: 68%;
+    width: 70%;
+   
 }
 
 .banner-foto{
    width: 30%;
+ 
 
  }
 
  .banner-foto img{
     width: 340px;
-height: 332px;
+height: 315px;
 flex-shrink: 0;
 border-radius: 16px;
 background: #D9D9D9;
@@ -37,15 +40,16 @@ font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 27px;
-width: 94%;
+width: 97%;
  }
- .title-banner{
+ .title-banner h1{
     color: #000;
 font-family: Inter;
-font-size: 26px;
+font-size: 40px;
 font-style: normal;
 font-weight: 800;
 line-height: 54px;
+
  }
  .banner-writen{
     color: #000;

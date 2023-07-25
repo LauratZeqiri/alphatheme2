@@ -2,7 +2,7 @@
 
 function alpha_script() {
     wp_enqueue_style( 'customestyle', get_template_directory_uri() . '/css/style.css', array(), '1.0.0', 'all' );
-    wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/index.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/index.js', array('jquery'));
 
 }
 add_action( 'wp_enqueue_scripts', 'alpha_script' );
@@ -35,8 +35,43 @@ remove_post_type_support( 'post', 'editor' );
 remove_post_type_support( 'page', 'editor' );
 }
 
+add_role(
+    'business',
+    ( 'Business'  ),
+    array(
+        'read'  => true,
+        'delete_posts'  => true,
+        'delete_published_posts' => true,
+        'edit_posts'   => true,
+        'publish_posts' => true,
+        'upload_files'  => true,
+        'edit_pages'  => true,
+        'edit_published_pages'  =>  true,
+        'publish_pages'  => true,
+        'delete_publishedpages' => false,
+        'edit[businesspost]'  =>  true,
+        'read[business_post]'  =>  true,
 
 
+    )
+);
+
+add_role(
+    'customer',
+    ( 'Customer'  ),
+    array(
+        'read'  => true,
+        'delete_posts'  => true,
+        'delete_published_posts' => true,
+        'edit_posts'   => true,
+        'publish_posts' => true,
+        'upload_files'  => true,
+        'edit_pages'  => true,
+        'edit_published_pages'  =>  true,
+        'publish_pages'  => true,
+        'delete_published_pages' => false, 
+    )
+);
 
 
 
@@ -63,51 +98,71 @@ function post_type() {
 }
 add_action( 'init', 'post_type' );
 
-// function enqueue_custom_scripts() {
-
-// }
-// add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
-
-
-
-
 function load_posts_by_ajax_callback() {
     check_ajax_referer('load_more_posts', 'security');
+
+    $current_page = isset($_POST['page']) ? intval($_POST['page']) : 1;
 
     $args = array(
         'post_type' => 'bussines_post',
         'post_status' => 'publish',
-        'orderby' => 'ID',
-        'posts_per_page' => 2,
-        'paged' => $_POST['page'],
+        'posts_per_page' => 4,
+        'paged' => $current_page // Add paged parameter to fetch the appropriate page
     );
 
     $blog_posts = new WP_Query($args);
+
     ob_start();
-
-    if ($blog_posts->have_posts()) :
-        while ($blog_posts->have_posts()) :
+    $count = 0; // Initialize count outside the while loop
+    if ($blog_posts->have_posts()) {
+        while ($blog_posts->have_posts()) {
             $blog_posts->the_post();
-            ?>
-            <div class="post">
-                <?php $imag = get_field('imag'); ?>
-                <?php if ($imag) : ?>
-                    <img src="<?php echo esc_url($imag['url']); ?>" alt="<?php echo esc_attr($imag['alt']); ?>" class="imag">
-                <?php endif; ?>
-                <h1><?php the_title(); ?></h1>
+            
+            // Assuming $featured_image, $title, $oneliner, and $permalink are post-related values
+            $featured_image = get_the_post_thumbnail_url();
+            $id = $business->ID;
+            $title = get_the_title();
+            $oneliner = get_field('informata', $id);
+            $oneliner = !empty($oneliner) ? $oneliner : 'Default Text'; // Set a default value if the custom field is empty
 
-                <?php $biznesi_text = get_field('informata'); ?>
-                <?php if ($biznesi_text) : ?>
-                    <div class="textare"><?php echo esc_html($biznesi_text); ?></div>
-                <?php endif; ?>
-                
-                <?php $biznesi_permalink = get_permalink(); ?>
-                <a href="<?php echo esc_url($biznesi_permalink); ?>" class="permalink-bus">Visit Business</a>
-            </div>
-            <?php
-        endwhile;
+            $permalink = get_permalink();
+
+            if ($count < 1) { // Check count before displaying the post
+                ?>
+                <div class="post">
+                    <img src="<?php echo $featured_image; ?>" class="toplist_thumbnail">
+                    <h1><?= $title; ?></h1>
+                    <div class="textare"><?php echo esc_html($oneliner); ?></div>
+                    <a href="<?php echo $permalink; ?>" class="permalink-bus">Visit Business</a>
+                </div>
+                <?php
+            }
+            $count++; // Increment the count for each post displayed
+        }
+
         wp_reset_postdata();
-    endif;
+
+        // Check if there are more posts on the next page
+        $args_next_page = array(
+            'post_type' => 'bussines_post',
+            'post_status' => 'publish',
+            'posts_per_page' => 4,
+            'paged' => $current_page + 1 // Next page number
+        );
+
+        $blog_posts_next_page = new WP_Query($args_next_page);
+
+        // If there are no more posts to load, hide the load more button
+        if (!$blog_posts_next_page->have_posts()) {
+            ?>
+            <style type="text/css">
+                #load-more-button {
+                    display: none;
+                }
+            </style>
+            <?php
+        }
+    }
 
     $response = ob_get_clean();
     echo $response;
@@ -116,6 +171,9 @@ function load_posts_by_ajax_callback() {
     // Ensure that there are no further actions or output after wp_die()
     exit;
 }
+
+
+
 
 add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
 add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_callback');
@@ -129,14 +187,11 @@ function blog_scripts() {
         'ajaxurl' => admin_url('admin-ajax.php'),
         'security' => wp_create_nonce('load_more_posts'),
     );
-    wp_localize_script('custom-script', 'blog', $script_data_array);
+    wp_localize_script('customjs', 'blog', $script_data_array);
 }
   
 
-// add_action( 'wp_enqueue_scripts', 'blog_scripts');
+add_action( 'wp_enqueue_scripts', 'blog_scripts');
 
-wp_enqueue_script('custom-script');
-
-
-// Enqueued script with localized data.
+// wp_enqueue_script('custom-script');
 ?>

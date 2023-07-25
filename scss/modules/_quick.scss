@@ -31,7 +31,7 @@
     width: 100%;
     padding: 25px;
     height:auto;
-    text-align: left;
+    // text-align: left;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 8px;
@@ -40,21 +40,22 @@
   }
   
   .para {
-    letter-spacing: 1.5px;
-    font-size: 18px;
+    letter-spacing: 1px;
+    font-size: 19px;
     line-height: 1.5;
     color: #333333;
     background-color: #ffffff;
     // padding: 5px;
     border-radius: 8px;
-    width: 97%;
+    // width: 97%;
     color: var(--kit-colors-slate-900, #0F172A);
   //  font-family: Inter;
    font-size: 16px;
    font-style: normal;
    font-weight: 400;
-   line-height: 25px;
-   text-align:justify;
+   line-height: 21px;
+   word-spacing: 1px;
+  //  text-align:justify;
 
   }
   

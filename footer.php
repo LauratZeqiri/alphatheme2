@@ -1,4 +1,7 @@
+<?php if (!is_search() || (!is_search() && have_posts())) : ?>
+
 <?php include(__DIR__ . '/sections/author.php'); ?>
+<?php endif; ?>
 <footer>
         <button onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up button"></button>
         <script>

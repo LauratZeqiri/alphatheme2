@@ -4,29 +4,34 @@
   background-position: center;
   background-attachment: fixed;
   opacity: 0.8;
-}
 
 
 .parallax-content {
   position: absolute;
+  width: 530px;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  left:70%;
+  transform: translate(-50%, -75%);
   color: #fff;
 }
 
-
 .parallax-content h2 {
-  font-size: 36px;
+  font-size: 60px;
   font-weight: bold;
   margin-bottom: 20px;
-  color:black;
-} 
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
 
 
 .parallax-content p {
-  font-size: 18px;
+  font-size: 35px;
   margin-bottom: 0;
-  color:black;
-} 
+  font-weight: 600;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+}

@@ -38,6 +38,14 @@
 
 .bussines__card--image img{
   width: 100%;
+  height: 250px !important;
+  object-fit: cover;
+}
+
+.bussines__card--image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
 }
 .bussiness__card--headlines {
   display: flex;
@@ -51,6 +59,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+  
 }
 .bussiness__card--stars {
   background: #f1f5f9;

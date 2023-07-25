@@ -5,9 +5,16 @@
     align-items: center;
     margin: auto 0px;
     margin-top: 50px;
-    margin-bottom: 30px;
-
+    margin-bottom: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
 }
+
+
 .relationship-img img{
     width: 72px;
     height: 72px;
@@ -81,7 +88,7 @@ width: 167px;
     // margin: 0 auto;
     display: flex;
     background-color: #EFF6FF;
-    margin-top: 30px;
+    // margin-top: 30px;
     justify-content: space-between;
     align-items: center;
     height: 96px;
@@ -94,7 +101,7 @@ width: 167px;
     line-height: 1.5;
     text-align: justify;
     letter-spacing: 0.5px;
-    font-size: 17px;
+    font-size: 18px;
     padding: 10px 0px;
 }
 .content-module div{
@@ -103,7 +110,7 @@ width: 167px;
     margin-top: 13px;
     color: var(--kit-colors-slate-900, #0F172A);
    font-family: Inter;
-   font-size: 15px;
+   font-size: 16px;
    font-style: normal;
    font-weight: 400;
    line-height: 24px

@@ -41,9 +41,9 @@
           </div>
       </div> 
 
+      
       <div class="description">
       <p><?php echo get_the_author_meta('user_description',$id) ?></p>
-      <a href="", class="more-info">More info on <?php echo get_the_author_meta('nickname',$id)?></a>
       </div>
     </div>  
   </div>

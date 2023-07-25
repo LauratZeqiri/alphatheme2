@@ -14,8 +14,7 @@ $image = get_sub_field('photo');
    <div class="banner-items">
    <div class="banner-content">
     <div class="title-banner">
-   <h1><?php echo $title;
- ?>
+   <h1><?php echo $title;?> </h1>
  </div>
     <div class="description-banner">
  <?php echo $description;
@@ -33,3 +32,5 @@ $image = get_sub_field('photo');
 </div>
 </div>
 </div>
+
+
