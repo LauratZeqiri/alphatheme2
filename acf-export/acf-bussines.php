@@ -130,6 +130,103 @@ acf_add_local_field_group(array(
 			'max' => '',
 			'step' => '',
 		),
+
+		//Location WYSIWYG start
+		array(
+			'key' => 'field_64c0f9d6ed62a',
+			'label' => 'Location',
+			'name' => 'location',
+			'type' => 'wysiwyg',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 0,
+			'delay' => 0,
+		),
+		//Location WYSIWYG end
+
+		//Location Link start
+		array(
+			'key' => 'field_64c10698072be',
+			'label' => 'Location Link',
+			'name' => 'location_link',
+			'type' => 'link',
+			'instructions' => 'Provide only the link without the tags.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
+		),
+		//Location Link end
+
+		//Location Checkbox start
+		array(
+			'key' => 'field_64c26cb287bdb',
+			'label' => 'Location Checkbox',
+			'name' => 'location_checkbox',
+			'type' => 'checkbox',
+			'instructions' => 'Gives the option to check what to show and vice versa.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'washington' => 'Washington',
+				'california' => 'California',
+			),
+			'allow_custom' => 1,
+			'save_custom' => 1,
+			'default_value' => array(
+			),
+			'layout' => 'vertical',
+			'toggle' => 0,
+			'return_format' => 'value',
+		),
+		//Location Checkbox end
+
+		//Location Relationship start
+		array(
+			'key' => 'field_64c274a6ba040',
+			'label' => 'Location Relationship',
+			'name' => 'location_relationship',
+			'type' => 'relationship',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array(
+				0 => 'bussines_post',
+			),
+			'taxonomy' => '',
+			'filters' => array(
+				0 => 'search',
+			),
+			'elements' => '',
+			'min' => '',
+			'max' => 1,
+			'return_format' => 'object',
+		),
+		//Location Relationship end
+
 	),
 	'location' => array(
 		array(

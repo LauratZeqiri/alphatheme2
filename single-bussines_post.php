@@ -55,9 +55,42 @@ if ($reviews) {
     </div>
   
 </div>
+<div class="right-info">
+       
+       <h4>Location: &nbsp</h4> <span><?php the_field('location'); ?></span>
+
+   </div>
+</div>
+<div class="left-info">
+       
+        
+   </div>
 </div>
 </div>
+<?php $location_link = get_field("location_link") ?>
+<div class="mapouter">
+    <div class="gmap_canvas">
+        <iframe 
+        width="770" 
+        height="510" 
+        id="gmap_canvas" 
+        src="<?php echo $location_link['url'] ?>"
+        frameborder="0" 
+        scrolling="no" 
+        marginheight="0" 
+        marginwidth="0">
+
+        </iframe>
+        <br>
+        <style>.mapouter{position:relative;text-align:right;height:510px;width:770px;}</style>
+        <style>.gmap_canvas {overflow:hidden;background:none!important;height:510px;width:770px; border-radius:10px; margin-top:30px; margin-left: 15%;}</style>
+    </div>
+
 </div>
+</div>
+
+
+
 
 
  <?php include (get_template_directory().'/include/module.php'); ?>
