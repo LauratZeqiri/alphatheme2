@@ -92,7 +92,7 @@
   right: 0;
 }
 
-.menu-main-navigation-container .menu {
+.menu-main-navigation-container, .menu {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   text-align: center;

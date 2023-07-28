@@ -31,15 +31,28 @@ $bg-color: #FDFEFD;
 }
 
 
-.menu-main-navigation-container .menu{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
-  text-align: center;
-  align-items: center;
-  position: relative;
-  grid-gap: 10px;
+.menu-main-navigation-container, .menu {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+    text-align: center;
+    align-items: center;
+    position: relative;
+    grid-gap: 10px;
  
 }
+
+
+
+// #menu-main-nav
+// {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+//     text-align: center;
+//     align-items: center;
+//     position: relative;
+//     grid-gap: 10px;
+// }
 
 // 
 
