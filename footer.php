@@ -2,29 +2,34 @@
 
 <?php include(__DIR__ . '/sections/author.php'); ?>
 <?php endif; ?>
+
 <footer>
-        <button onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up button"></button>
-        <script>
-                let mybutton = document.getElementById("myBtn");
 
-               
-                window.onscroll = function() {
-                        scrollFunction()
-                };
+<button onclick="topFunction()" id="myBtn" title="Go to top" class="fa fa-angle-up button" style="display: none;"></button>
 
-                function scrollFunction() {
-                        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                                mybutton.style.display = "block";
-                        } else {
-                                mybutton.style.display = "none";
-                        }
-                }
+<script>
 
-                function topFunction() {
-                        document.body.scrollTop = 0; 
-                        document.documentElement.scrollTop = 0; 
-                }
-        </script>
+  function checkScrollPosition() {
+    let mybutton = document.getElementById("myBtn");
+    const footer = document.querySelector("footer");
+    const footerLine = footer.offsetTop - window.innerHeight;
+
+    if (window.scrollY >= footerLine) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+
+  window.addEventListener("scroll", checkScrollPosition);
+
+
+  function topFunction() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+       </script>
+
         <div class="container">
                 <div class="footer-section">
                         <div class="left-footer">
