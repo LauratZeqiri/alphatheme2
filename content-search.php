@@ -1,6 +1,8 @@
+
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
     <?php if( has_post_thumbnail() ): ?>
         <?php endif; ?>
+        <?php  ?><br/>
             <div class="first">
                 <div class="image-search" ><?php the_post_thumbnail('thumbnail'); ?></div>
 
