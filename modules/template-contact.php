@@ -43,7 +43,7 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])){
     $mail->Port = 587;
 
     $mail->Username = "laurat.zeqiri1@student.uni-pr.edu";
-    $mail->Password = "vendosjaepasswordit";
+    $mail->Password = "lauratzeqiri123A";
     $mail->setFrom($email, $name); 
 
     $mail->addAddress("laurat.zeqiri1@student.uni-pr.edu", "Laurat");
