@@ -19,6 +19,89 @@ acf_add_local_field_group(array(
             ),
             // prej qitu keni me shtu layouts (module)
             'layouts' => array(
+				'layout_64c0de69031d8' => array(
+					'key' => 'layout_64c0de69031d8',
+					'name' => 'cards',
+					'label' => 'Cards',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_64c0e81ed137d',
+							'label' => 'Post Type',
+							'name' => 'post_type',
+							'type' => 'button_group',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array(
+								'businesses' => 'Businesses', 
+								'pages' => 'Pages', 
+							),
+							'allow_null' => 0,
+							'default_value' => '',
+							'layout' => 'horizontal',
+							'return_format' => 'value',
+						),
+						array(
+							'key' => 'field_relationship',
+							'label' => 'Related Posts',
+							'name' => 'related_posts',
+							'type' => 'relationship',
+							'instructions' => 'Select related posts',
+							'required' => 0,
+							'conditional_logic' => array( 
+								array(
+									array(
+										'field' => 'field_64c0e81ed137d', 
+										'operator' => '==',
+										'value' => 'businesses', 
+									),
+								),
+							),
+							'post_type' => array(
+								0 => 'bussines_post',
+							),
+							'filters' => array(
+								0 => 'search',
+								1 => 'post_type',
+							),
+							'return_format' => 'id',
+						),
+						array(
+							'key' => 'field_relationship_pages', 
+							'label' => 'Related Pages',
+							'name' => 'related_pages',
+							'type' => 'relationship',
+							'instructions' => 'Select related pages',
+							'required' => 0,
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_64c0e81ed137d', 
+										'operator' => '==',
+										'value' => 'pages', 
+									),
+								),
+							),
+							'post_type' => array(
+								0 => 'page',
+							),
+							'filters' => array(
+								0 => 'search',
+								1 => 'post_type',
+							),
+							'return_format' => 'id',
+						),
+					),
+					'min' => '',
+					'max' => '',
+				),
+				
 				'layout_64a809a3b4c08' => array(
 					'key' => 'layout_64a809a3b4c08',
 					'name' => 'page_cards',
