@@ -50,7 +50,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_64cbc201caa74',
-							'label' => 'Pages',
+							'label' => 'pages',
 							'name' => 'pages',
 							'type' => 'relationship',
 							'instructions' => '',
@@ -81,7 +81,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_64cbc255ce0c5',
-							'label' => 'Businesses',
+							'label' => 'businesses',
 							'name' => 'businesses_test',
 							'type' => 'relationship',
 							'instructions' => '',
