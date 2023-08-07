@@ -112,14 +112,23 @@ acf_add_local_field_group(array(
 							'max' => '',
 							'return_format' => 'object',
 						),
+				
 						array(
-							'key' => 'field_64d0ba0bb274a',
-							'label' => 'Services',
+							'key' => 'field_64cbc255ce0c5',
+							'label' => 'services',
 							'name' => 'services',
 							'type' => 'relationship',
 							'instructions' => '',
 							'required' => 0,
-							'conditional_logic' => 0,
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_64c0e81ed137d',
+										'operator' => '==',
+										'value' => 'services',
+									),
+								),
+							),
 							'wrapper' => array(
 								'width' => '',
 								'class' => '',
@@ -137,7 +146,6 @@ acf_add_local_field_group(array(
 							'max' => '',
 							'return_format' => 'object',
 						),
-
 					),
 					'min' => '',
 					'max' => '',
@@ -1039,20 +1047,8 @@ acf_add_local_field_group(array(
 				'value' => 'bussines_post',
 			),
 		),
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'services',
-			),
-		),
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'custom_post_type',
-			),
-		),
+	
+		
 	),
 	
     'menu_order' => 0,
