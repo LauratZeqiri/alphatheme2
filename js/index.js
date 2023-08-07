@@ -20,3 +20,21 @@ jQuery(function($) {
     });
 });
   
+
+  
+    function showSuccessPopup(message, seconds) {
+        var popup = $('#successPopup');
+        var popupMessage = $('#successMessage');
+
+     
+        popupMessage.html(message);
+
+        
+        popup.show();
+
+       
+        setTimeout(function () {
+            popup.hide();
+        }, seconds * 1000); 
+    }
+

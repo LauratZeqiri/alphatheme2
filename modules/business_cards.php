@@ -5,6 +5,7 @@
             <?php
             if (get_row_layout() === 'business_cards') {
                 $relation_items = get_sub_field('cards_relationship');
+               
                 if ($relation_items) {
                     foreach ($relation_items as $relation_item) {
                         $biznesi_title = $relation_item->post_title;

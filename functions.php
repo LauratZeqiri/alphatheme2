@@ -195,4 +195,6 @@ function blog_scripts() {
 add_action( 'wp_enqueue_scripts', 'blog_scripts');
 
 // wp_enqueue_script('custom-script');
+
+
 ?>
