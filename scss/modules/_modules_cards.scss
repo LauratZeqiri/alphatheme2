@@ -1,4 +1,4 @@
-/* Stilizimi i kartelave dhe hapsira shtesë */
+
 .modules-cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -12,7 +12,7 @@
     border-radius: 8px;
     padding: 20px;
     transition: box-shadow 0.3s ease-in-out;
-    margin: 0 20px 20px 0; /* Hapsira e shtuar mes kartelave */
+    margin: 0 20px 20px 0; 
 }
 
 .card_page:hover, .card_businesses:hover {
@@ -50,7 +50,7 @@
     line-height: 21px;
 }
 
-/* Stilizimi i butonave "Previous" dhe "Next" */
+
 .slider .slick-prev,
 .slider .slick-next {
     position: absolute;
@@ -95,9 +95,9 @@
 }
 
 .slider .slick-prev:before {
-    content: "\003c"; /* Simboli < */
+    content: "\003c"; 
 }
 
 .slider .slick-next:before {
-    content: "\003e"; /* Simboli > */
+    content: "\003e";
 }

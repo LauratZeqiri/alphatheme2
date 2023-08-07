@@ -74,7 +74,28 @@ add_role(
 );
 
 
+function post_type_services(){
+    $labels = array(
+        'name' => 'Services',
+        'singular_name' => 'Services',
+        'menu_name' => 'Services',
+    );
 
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'menu_position' => 5,
+        'rewrite' => array( 'slug' => 'services' ), 
+        'supports' => array( 'title', 'editor', 'thumbnail' ),
+        'capability_type' => 'post', 
+
+    );
+
+    register_post_type( 'services', $args );
+}
+
+add_action( 'init', 'post_type_services' );
 
 
 

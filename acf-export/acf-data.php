@@ -112,6 +112,32 @@ acf_add_local_field_group(array(
 							'max' => '',
 							'return_format' => 'object',
 						),
+						array(
+							'key' => 'field_64d0ba0bb274a',
+							'label' => 'Services',
+							'name' => 'services',
+							'type' => 'relationship',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'post_type' => array(
+								0 => 'services',
+							),
+							'taxonomy' => '',
+							'filters' => array(
+								0 => 'search',
+							),
+							'elements' => '',
+							'min' => '',
+							'max' => '',
+							'return_format' => 'object',
+						),
+
 					),
 					'min' => '',
 					'max' => '',
@@ -447,6 +473,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				
 				'layout_64ae6d9808804' => array(
 					'key' => 'layout_64ae6d9808804',
 					'name' => 'content_module',
@@ -997,22 +1024,37 @@ acf_add_local_field_group(array(
             'max' => '',
         ),
     ),
-    'location' => array(
+	'location' => array(
 		array(
-            array(
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => 'page',
-            ),
-		),
-        array(
 			array(
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => 'bussines_post',
-            ),
-        ),
-    ),
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'page',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'bussines_post',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'services',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'custom_post_type',
+			),
+		),
+	),
+	
     'menu_order' => 0,
     'position' => 'normal',
     'style' => 'default',
