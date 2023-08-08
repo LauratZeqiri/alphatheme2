@@ -50,7 +50,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_64cbc201caa74',
-							'label' => 'pages',
+							'label' => 'Pages',
 							'name' => 'pages',
 							'type' => 'relationship',
 							'instructions' => '',
@@ -79,43 +79,10 @@ acf_add_local_field_group(array(
 							'max' => '',
 							'return_format' => 'object',
 						),
+
 						array(
-							'key' => 'field_64cbc255ce0c5',
-							'label' => 'businesses',
-							'name' => 'businesses_test',
-							'type' => 'relationship',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => array(
-								array(
-									array(
-										'field' => 'field_64c0e81ed137d',
-										'operator' => '==',
-										'value' => 'businesses',
-									),
-								),
-							),
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'post_type' => array(
-								0 => 'bussines_post',
-							),
-							'taxonomy' => '',
-							'filters' => array(
-								0 => 'search',
-							),
-							'elements' => '',
-							'min' => '',
-							'max' => '',
-							'return_format' => 'object',
-						),
-				
-						array(
-							'key' => 'field_64cbc255ce0c5',
-							'label' => 'services',
+							'key' => 'field_64d0ba0bb274a',
+							'label' => 'Services',
 							'name' => 'services',
 							'type' => 'relationship',
 							'instructions' => '',
@@ -146,10 +113,50 @@ acf_add_local_field_group(array(
 							'max' => '',
 							'return_format' => 'object',
 						),
+
+
+
+
+
+						array(
+							'key' => 'field_64cbc255ce0c5',
+							'label' => 'Businesses',
+							'name' => 'businesses_test',
+							'type' => 'relationship',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_64c0e81ed137d',
+										'operator' => '==',
+										'value' => 'businesses',
+									),
+								),
+							),
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'post_type' => array(
+								0 => 'bussines_post',
+							),
+							'taxonomy' => '',
+							'filters' => array(
+								0 => 'search',
+							),
+							'elements' => '',
+							'min' => '',
+							'max' => '',
+							'return_format' => 'object',
+						),
 					),
 					'min' => '',
 					'max' => '',
 				),
+
+				
 				'layout_64a809a3b4c08' => array(
 					'key' => 'layout_64a809a3b4c08',
 					'name' => 'page_cards',
