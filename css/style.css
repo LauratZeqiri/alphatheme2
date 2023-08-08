@@ -1814,34 +1814,37 @@ a.permalink-bus:hover {
 
 .modules-cards-container {
   display: flex;
-  flex-wrap: wrap;
-  margin: 0 0 80px 0;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.card_page, .card_businesses {
+.card_page, .card_businesses, .card_services {
   flex: 1 0 220px;
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
   transition: box-shadow 0.3s ease-in-out;
-  margin: 0 20px 20px 0;
-}
-
-.card_page:hover, .card_businesses:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px 10px 10px 10px;
 }
 
 .modules-card-image img {
   width: 100%;
-  height: 265px;
   object-fit: cover;
   border-radius: 8px;
+  height: 200px;
 }
 
 .title-cards {
   display: inline-block;
+  padding: 0 10px 0 10px;
+  color: #000;
   font-size: 32px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  line-height: 27px;
 }
 
 .modules-cards-container h3 {
