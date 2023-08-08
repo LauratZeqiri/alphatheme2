@@ -23,13 +23,6 @@
                                 <h4 class="mb-0"><?php echo $name; ?></h4>
                                 <p><?php echo $comment; ?></p>
                             </div>
-                            <!-- <div class="ratings">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div> -->
                         </div>
                     </div>
             <?php
