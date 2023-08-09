@@ -74,6 +74,29 @@ add_role(
 );
 
 
+function register_custom_post_type_services() {
+    register_post_type( 'services', array(
+        'labels' => array(
+            'name' => 'Services',
+            'singular_name' => 'Servicess',
+        ),
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'services' ),
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-admin-tools', 
+        'supports' => array( 'title', 'thumbnail',),
+    ) );
+}
+add_action( 'init', 'register_custom_post_type_services' );
+
+
 
 
 
@@ -91,8 +114,8 @@ function post_type() {
         'has_archive' => true,
         'menu_position' => 5,
         'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields','comments' ),
-        'capability_type' => 'post', 
-        'taxonomies'  => array( 'category' )
+        'capability_type' => 'post',
+        'menu_icon' => 'dashicons-store',  
     );
 
     register_post_type( 'bussines_post', $args );

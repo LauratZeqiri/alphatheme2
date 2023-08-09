@@ -39,8 +39,25 @@
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
+    <?php elseif ($post_type_selected === 'services'): ?>
+        <?php $selected_services = get_sub_field('services'); ?>
+        <?php if (!empty($selected_services)): ?>
+            <div class="modules-cards-container slider">
+                <?php foreach ($selected_services as $service): ?>
+                    <div class="card_services">
+                        <div class="modules-card-image">
+                            <?php echo get_the_post_thumbnail($service->ID, 'thumbnail'); ?>
+                        </div>
+                        <h3><?php echo get_the_title($service->ID); ?></h3>
+                        <button class="btn-button"><a href="<?php echo get_permalink($service->ID); ?>">View Service</a></button>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
     <?php endif; ?>
+    
 </div>
+
 
 
 

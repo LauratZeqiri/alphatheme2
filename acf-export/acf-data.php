@@ -50,7 +50,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_64cbc201caa74',
-							'label' => 'pages',
+							'label' => 'Pages',
 							'name' => 'pages',
 							'type' => 'relationship',
 							'instructions' => '',
@@ -79,9 +79,48 @@ acf_add_local_field_group(array(
 							'max' => '',
 							'return_format' => 'object',
 						),
+
+						array(
+							'key' => 'field_64d0ba0bb274a',
+							'label' => 'Services',
+							'name' => 'services',
+							'type' => 'relationship',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => array(
+								array(
+									array(
+										'field' => 'field_64c0e81ed137d',
+										'operator' => '==',
+										'value' => 'services',
+									),
+								),
+							),
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'post_type' => array(
+								0 => 'services',
+							),
+							'taxonomy' => '',
+							'filters' => array(
+								0 => 'search',
+							),
+							'elements' => '',
+							'min' => '',
+							'max' => '',
+							'return_format' => 'object',
+						),
+
+
+
+
+
 						array(
 							'key' => 'field_64cbc255ce0c5',
-							'label' => 'businesses',
+							'label' => 'Businesses',
 							'name' => 'businesses_test',
 							'type' => 'relationship',
 							'instructions' => '',
@@ -116,6 +155,8 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+
+				
 				'layout_64a809a3b4c08' => array(
 					'key' => 'layout_64a809a3b4c08',
 					'name' => 'page_cards',
@@ -447,6 +488,7 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				
 				'layout_64ae6d9808804' => array(
 					'key' => 'layout_64ae6d9808804',
 					'name' => 'content_module',
@@ -997,22 +1039,25 @@ acf_add_local_field_group(array(
             'max' => '',
         ),
     ),
-    'location' => array(
+	'location' => array(
 		array(
-            array(
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => 'page',
-            ),
-		),
-        array(
 			array(
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => 'bussines_post',
-            ),
-        ),
-    ),
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'page',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'bussines_post',
+			),
+		),
+	
+		
+	),
+	
     'menu_order' => 0,
     'position' => 'normal',
     'style' => 'default',
