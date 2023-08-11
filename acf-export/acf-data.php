@@ -19,182 +19,6 @@ acf_add_local_field_group(array(
             ),
             // prej qitu keni me shtu layouts (module)
             'layouts' => array(
-				'layout_64c0de69031d8' => array(
-					'key' => 'layout_64c0de69031d8',
-					'name' => 'modules_cards',
-					'label' => 'Modules Cards',
-					'display' => 'block',
-					'sub_fields' => array(
-						array(
-							'key' => 'field_64c0e81ed137d',
-							'label' => 'Post Type',
-							'name' => 'post_type_select',
-							'type' => 'button_group',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'choices' => array(
-								'businesses' => 'Businesses',
-								'pages' => 'Pages',
-								'services' => 'Services',
-							),
-							'allow_null' => 0,
-							'default_value' => '',
-							'layout' => 'horizontal',
-							'return_format' => 'value',
-						),
-						array(
-							'key' => 'field_64cbc201caa74',
-							'label' => 'Pages',
-							'name' => 'pages',
-							'type' => 'relationship',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => array(
-								array(
-									array(
-										'field' => 'field_64c0e81ed137d',
-										'operator' => '==',
-										'value' => 'pages',
-									),
-								),
-							),
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'post_type' => array(
-								0 => 'page',
-							),
-							'taxonomy' => '',
-							'filters' => '',
-							'elements' => '',
-							'min' => '',
-							'max' => '',
-							'return_format' => 'object',
-						),
-
-						array(
-							'key' => 'field_64d0ba0bb274a',
-							'label' => 'Services',
-							'name' => 'services',
-							'type' => 'relationship',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => array(
-								array(
-									array(
-										'field' => 'field_64c0e81ed137d',
-										'operator' => '==',
-										'value' => 'services',
-									),
-								),
-							),
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'post_type' => array(
-								0 => 'services',
-							),
-							'taxonomy' => '',
-							'filters' => array(
-								0 => 'search',
-							),
-							'elements' => '',
-							'min' => '',
-							'max' => '',
-							'return_format' => 'object',
-						),
-
-
-
-
-
-						array(
-							'key' => 'field_64cbc255ce0c5',
-							'label' => 'Businesses',
-							'name' => 'businesses_test',
-							'type' => 'relationship',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => array(
-								array(
-									array(
-										'field' => 'field_64c0e81ed137d',
-										'operator' => '==',
-										'value' => 'businesses',
-									),
-								),
-							),
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'post_type' => array(
-								0 => 'bussines_post',
-							),
-							'taxonomy' => '',
-							'filters' => array(
-								0 => 'search',
-							),
-							'elements' => '',
-							'min' => '',
-							'max' => '',
-							'return_format' => 'object',
-						),
-					),
-					'min' => '',
-					'max' => '',
-				),
-
-				
-				'layout_64a809a3b4c08' => array(
-					'key' => 'layout_64a809a3b4c08',
-					'name' => 'page_cards',
-					'label' => 'Page Cards',
-					'display' => 'block',
-					'sub_fields' => array(
-						array(
-							'key' => 'field_64a809bb2bb38',
-							'label' => 'Page',
-							'name' => 'get_page',
-							'type' => 'relationship',
-							'instructions' => '',
-							'required' => 0,
-							'conditional_logic' => 0,
-							'wrapper' => array(
-								'width' => '',
-								'class' => '',
-								'id' => '',
-							),
-							'post_type' => array(
-								0 => 'page',
-							),
-							'taxonomy' => '',
-							'filters' => array(
-								0 => 'search',
-							),
-							'elements' => array(
-								0 => 'featured_image',
-							),
-							'min' => '',
-							'max' => '',
-							'return_format' => 'object',
-						),
-					),
-					'min' => '',
-					'max' => '',
-				),
-				
 				'layout_64b105c645e48' => array(
 					'key' => 'layout_64b105c645e48',
 					'name' => 'banner_section',
@@ -359,6 +183,117 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
+				//test
+				'layout_64c0de69031d8' => array(
+					'key' => 'layout_64c0de69031d8',
+					'name' => 'modules_cards',
+					'label' => 'Modules Cards',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_button_group',
+								'label' => 'Button Group Field',
+								'name' => 'button_group_field',
+								'type' => 'button_group',
+								'instructions' => 'Choose an option:',
+								'required' => 1,
+								'choices' => array(
+									'businesses' => 'Businesses',
+									'pages' => 'Pages',
+									'services' => 'Services',
+								),
+								'allow_null' => 0,
+								'default_value' => 'businesses',
+								'layout' => 'horizontal',
+								'return_format' => 'value',
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								),
+								array(
+								'key' => 'field_relationship_businesses',
+								'label' => 'Businesses',
+								'name' => 'related_businesses',
+								'type' => 'relationship',
+								'required' => 0,
+								'conditional_logic' => array(
+									array(
+										array(
+											'field' => 'field_button_group',
+											'operator' => '==',
+											'value' => 'businesses',
+										),
+									),
+								),
+								'post_type' => array(
+									0 => 'bussines_post',
+								),
+								'filters' => array(
+									0 => 'search',
+								
+								),
+								'return_format' => 'id',
+								),
+								array(
+								'key' => 'field_relationship_pages',
+								'label' => 'Pages',
+								'name' => 'related_pages',
+								'type' => 'relationship',
+								'required' => 0,
+								'conditional_logic' => array(
+									array(
+										array(
+											'field' => 'field_button_group',
+											'operator' => '==',
+											'value' => 'pages',
+										),
+									),
+								),
+								'post_type' => array(
+									0 => 'page',
+								),
+								'filters' => array(
+									0 => 'search',
+								
+								),
+								'return_format' => 'id',
+								),
+								array(
+								'key' => 'field_relationship_services',
+								'label' => 'Services',
+								'name' => 'related_services',
+								'type' => 'relationship',
+								'required' => 0,
+								'conditional_logic' => array(
+									array(
+										array(
+											'field' => 'field_button_group',
+											'operator' => '==',
+											'value' => 'services',
+										),
+									),
+								),
+								'post_type' => array(
+									0 => 'services_cards',
+								),
+								'filters' => array(
+									0 => 'search',
+								
+								),
+								'return_format' => 'id',
+								),
+
+					),
+					'min' => '',
+					'max' => '',
+				),
+
+
+
+				//test
 				'layout_64b1495a7c254' => array(
 					'key' => 'layout_64b1495a7c254',
 					'name' => 'parallax',
@@ -417,7 +352,7 @@ acf_add_local_field_group(array(
 				'layout_64ad4245bb8c0' => array(
 					'key' => 'layout_64ad4245bb8c0',
 					'name' => 'services_cards',
-					'label' => 'Services Cards',
+					'label' => 'services_cards',
 					'display' => 'block',
 					'sub_fields' => array(
 						array(
@@ -488,7 +423,6 @@ acf_add_local_field_group(array(
 					'min' => '',
 					'max' => '',
 				),
-				
 				'layout_64ae6d9808804' => array(
 					'key' => 'layout_64ae6d9808804',
 					'name' => 'content_module',
@@ -579,7 +513,7 @@ acf_add_local_field_group(array(
 				'layout_64ac7ab3b923e' => array(
 					'key' => 'layout_64ac7ab3b923e',
 					'name' => 'business_cards',
-					'label' => 'Business Cards',
+					'label' => 'business_cards',
 					'display' => 'block',
 					'sub_fields' => array(
 						array(
@@ -862,7 +796,7 @@ acf_add_local_field_group(array(
                 'layout_649944239c9b0' => array(
 					'key' => 'layout_649944239c9b0',
 					'name' => 'carousel',
-					'label' => 'Gallery Carousel',
+					'label' => 'Carousel',
 					'display' => 'block',
 					'sub_fields' => array(
 						array(
@@ -919,13 +853,13 @@ acf_add_local_field_group(array(
 				),
 				'layout_649e69388bcf5' => array(
 					'key' => 'layout_649e69388bcf5',
-					'name' => 'testimonials',
+					'name' => 'Testimonials',
 					'label' => 'Testimonials',
 					'display' => 'row',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_64a286ccd49ef',
-							'label' => 'Testimonials Items',
+							'label' => 'Testimonials',
 							'name' => 'testimonials_items',
 							'type' => 'repeater',
 							'instructions' => '',
@@ -985,25 +919,25 @@ acf_add_local_field_group(array(
 									'append' => '',
 									'maxlength' => '',
 								),
-								// array(
-								// 	'key' => 'field_64a286f9d49f2',
-								// 	'label' => 'title',
-								// 	'name' => 'title',
-								// 	'type' => 'text',
-								// 	'instructions' => '',
-								// 	'required' => 0,
-								// 	'conditional_logic' => 0,
-								// 	'wrapper' => array(
-								// 		'width' => '',
-								// 		'class' => '',
-								// 		'id' => '',
-								// 	),
-								// 	'default_value' => '',
-								// 	'placeholder' => '',
-								// 	'prepend' => '',
-								// 	'append' => '',
-								// 	'maxlength' => '',
-								// ),
+								 array(
+								 	'key' => 'field_64a286f9d49f2',
+								 	'label' => 'title',
+								 	'name' => 'title',
+								 	'type' => 'text',
+								 	'instructions' => '',
+								 	'required' => 0,
+								 	'conditional_logic' => 0,
+								 	'wrapper' => array(
+								 		'width' => '',
+								 		'class' => '',
+								 		'id' => '',
+								 	),
+								 	'default_value' => '',
+								 	'placeholder' => '',
+								 	'prepend' => '',
+								 	'append' => '',
+								 	'maxlength' => '',
+								 ),
 								array(
 									'key' => 'field_64a28703d49f3',
 									'label' => 'comment',
@@ -1030,6 +964,44 @@ acf_add_local_field_group(array(
 					'max' => '',
 				),
 				
+				'layout_64a809a3b4c08' => array(
+					'key' => 'layout_64a809a3b4c08',
+					'name' => 'page_cards',
+					'label' => 'Page Cards',
+					'display' => 'block',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_64a809bb2bb38',
+							'label' => 'Page',
+							'name' => 'get_page',
+							'type' => 'relationship',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'post_type' => array(
+								0 => 'page',
+							),
+							'taxonomy' => '',
+							'filters' => array(
+								0 => 'search',
+							),
+							'elements' => array(
+								0 => 'featured_image',
+							),
+							'min' => '',
+							'max' => '',
+							'return_format' => 'object',
+						),
+					),
+					'min' => '',
+					'max' => '',
+				),
+				
             ),
 
 
@@ -1039,25 +1011,22 @@ acf_add_local_field_group(array(
             'max' => '',
         ),
     ),
-	'location' => array(
+    'location' => array(
 		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'page',
-			),
+            array(
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'page',
+            ),
 		),
-		array(
+        array(
 			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'bussines_post',
-			),
-		),
-	
-		
-	),
-	
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'bussines_post',
+            ),
+        ),
+    ),
     'menu_order' => 0,
     'position' => 'normal',
     'style' => 'default',
