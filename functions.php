@@ -86,6 +86,7 @@ function post_type() {
         'menu_position' => 5,
         'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields','comments' ),
         'capability_type' => 'post', 
+        'taxonomies' => array('category') 
     );
 
     register_post_type( 'bussines_post', $args );
