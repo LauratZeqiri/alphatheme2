@@ -293,3 +293,18 @@
 .form-submit #submit:hover {
   background-color: #45a049;
 }
+
+.mapouter {
+  position:relative;
+  text-align:right;
+  height:510px;
+  width:100%;
+}
+
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  height:510px;width:100%;
+  border-radius:10px;
+  margin-top:30px;
+}
