@@ -166,12 +166,10 @@ function load_posts_by_ajax_callback() {
     $notin = explode(",", $displayed_businesses);
      
     $exclude_ids = array_diff( $allowedIds, $notin);
-    if (empty($allowedIds) || empty($exclude_ids)) {
-        // Either or both arrays are empty
-        wp_send_json( "No post available.");
+    if (empty($allowedIds) || empty($exclude_ids) || ($exclude_ids) < 5) {
+        wp_send_json(array());
     } else if (count(array_intersect($allowedIds, $exclude_ids)) === count($allowedIds)) {
-        // All the allowed IDs are also in the exclude IDs, which means no post is available
-        wp_send_json( "No post available.");
+        wp_send_json(array());
     }
     $args = array(
         'post_type' => 'bussines_post',
