@@ -214,47 +214,47 @@ acf_add_local_field_group(array(
 
 		),
 	),
-	),
-	//Location WYSIWYG start
-	array(
-		'key' => 'field_64c0f9d6ed62a',
-		'label' => 'Location',
-		'name' => 'location',
-		'type' => 'wysiwyg',
-		'instructions' => '',
-		'required' => 0,
-		'conditional_logic' => 0,
-		'wrapper' => array(
-			'width' => '',
-			'class' => '',
-			'id' => '',
+		//Location WYSIWYG start
+		array(
+			'key' => 'field_64c0f9d6ed62a',
+			'label' => 'Location',
+			'name' => 'location',
+			'type' => 'wysiwyg',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 0,
+			'delay' => 0,
 		),
-		'default_value' => '',
-		'tabs' => 'all',
-		'toolbar' => 'full',
-		'media_upload' => 0,
-		'delay' => 0,
-	),
+		
+		//Location WYSIWYG end
 	
-	//Location WYSIWYG end
-
-	//Location Link start
-	array(
-		'key' => 'field_64c10698072be',
-		'label' => 'Location Link',
-		'name' => 'location_link',
-		'type' => 'link',
-		'instructions' => 'Provide only the link without the tags.',
-		'required' => 0,
-		'conditional_logic' => 0,
-		'wrapper' => array(
-			'width' => '',
-			'class' => '',
-			'id' => '',
+		//Location Link start
+		array(
+			'key' => 'field_64c10698072be',
+			'label' => 'Location Link',
+			'name' => 'location_link',
+			'type' => 'link',
+			'instructions' => 'Provide only the link without the tags.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'array',
 		),
-		'return_format' => 'array',
+		//Location Link end
 	),
-	//Location Link end
 
 	'location' => array(
 		array(
