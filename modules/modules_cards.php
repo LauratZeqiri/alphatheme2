@@ -5,9 +5,13 @@
 <div class="container">
     <?php
     $post_type_selected = get_sub_field('post_type_select');
+    $titull = get_sub_field('field_64d258aab7833');
     ?>
+    <h2 class="title-cards"><?php echo $titull; ?></h2>
 
-    <h2 class="title-cards">Cards Module</h2>
+  
+
+
 
     <?php if ($post_type_selected === 'pages'): ?>
         <?php $selected_pages = get_sub_field('pages'); ?>
@@ -74,6 +78,3 @@
             });
         });
     </script>
-
-
-

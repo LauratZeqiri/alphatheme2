@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
@@ -485,6 +486,22 @@ footer .footer-paragraf {
 
 .form-submit #submit:hover {
   background-color: #45a049;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 510px;
+  width: 100%;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 510px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 30px;
 }
 
 .gallery {
@@ -1808,9 +1825,9 @@ a.permalink-bus:hover {
   right: -45px;
 }
 
+/* Stilizimi për pajisjet desktop */
 .modules-cards-container {
   display: flex;
-  position: relative;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
@@ -1823,7 +1840,7 @@ a.permalink-bus:hover {
   border-radius: 8px;
   padding: 20px;
   transition: box-shadow 0.3s ease-in-out;
-  margin: 10px 10px 10px 10px;
+  margin: 10px;
 }
 
 .modules-card-image img {
@@ -1835,7 +1852,7 @@ a.permalink-bus:hover {
 
 .title-cards {
   display: inline-block;
-  padding: 0 10px 0 10px;
+  padding: 0 10px;
   color: #000;
   font-size: 32px;
   font-family: "Inter", sans-serif;
@@ -1855,11 +1872,15 @@ a.permalink-bus:hover {
   border-radius: 16px;
   background: #54d577;
   border: none;
-  color: #0f172a;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: 21px;
+}
+
+.btn-button a {
+  text-decoration: none;
+  color: #0f172a;
 }
 
 .slider .slick-prev,
@@ -1913,6 +1934,39 @@ a.permalink-bus:hover {
   content: ">";
 }
 
+/* Stilizimi për pajisjet tablet */
+@media (max-width: 768px) {
+  .modules-cards-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .card_page, .card_businesses, .card_services {
+    flex: 1 0 auto;
+    margin: 10px 0;
+  }
+  .modules-card-image img {
+    height: 150px;
+  }
+  .title-cards {
+    font-size: 28px;
+    line-height: 24px;
+  }
+  .modules-cards-container h3 {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+}
+/* Stilizimi për pajisjet mobile */
+@media (max-width: 480px) {
+  .title-cards {
+    font-size: 24px;
+    line-height: 21px;
+  }
+  .modules-cards-container h3 {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
 html,
 body {
   margin: 0;

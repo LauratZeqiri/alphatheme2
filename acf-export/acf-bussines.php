@@ -51,90 +51,6 @@ acf_add_local_field_group(array(
 			'maxlength' => '',
 		),
 		array(
-			'key' => 'field_64b520599105b',
-			'label' => 'General_business_hours',
-			'name' => 'c_general_business_hours_repeater',
-			'type' => 'repeater',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'collapsed' => '',
-			'min' => 0,
-			'max' => 0,
-			'layout' => 'table',
-			'button_label' => '',
-			'sub_fields' => array(
-				array(
-					'key' => 'field_64b520ce9105c',
-					'label' => 'Day of the week',
-					'name' => 'c_general_business_hours_day_of_the_week',
-					'type' => 'select',
-					'instructions' => '',
-					'required' => 1,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'choices' => array(
-						'Monday' => 'Monday',
-						'Tuesday' => 'Tuesday',
-						'Wednesday' => 'Wednesday',
-						'Thursday' => 'Thursday',
-						'Friday' => 'Friday',
-						'Saturday' => 'Saturday',
-						'Sunday' => 'Sunday',
-					),
-					'default_value' => false,
-					'allow_null' => 1,
-					'multiple' => 0,
-					'ui' => 0,
-					'return_format' => 'value',
-					'ajax' => 0,
-					'placeholder' => '',
-				),
-				array(
-					'key' => 'field_64b522b7b250f',
-					'label' => 'Opening Time',
-					'name' => 'c_general_business_hours_opening_time',
-					'type' => 'time_picker',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'display_format' => 'g:i a',
-					'return_format' => 'g:i a',
-				),
-				array(
-					'key' => 'field_64b522ceb2510',
-					'label' => 'Closing Time',
-					'name' => 'c_general_business_hours_closing_time',
-					'type' => 'time_picker',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '',
-						'class' => '',
-						'id' => '',
-					),
-					'display_format' => 'g:i a',
-					'return_format' => 'g:i a',
-				),
-				
-			),
-		),
-		array(
 			'key' => 'field_64a3c72568c58',
 			'label' => 'reviews',
 			'name' => 'reviews',
@@ -214,7 +130,90 @@ acf_add_local_field_group(array(
 			'max' => '',
 			'step' => '',
 		),
+		array(
+			'key' => 'field_64b520599105b',
+			'label' => 'General_business_hours',
+			'name' => 'c_general_business_hours_repeater',
+			'type' => 'repeater',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'collapsed' => '',
+			'min' => 0,
+			'max' => 0,
+			'layout' => 'table',
+			'button_label' => '',
+			'sub_fields' => array(
+			array(
+				'key' => 'field_64b520ce9105c',
+				'label' => 'Day of the week',
+				'name' => 'c_general_business_hours_day_of_the_week',
+				'type' => 'select',
+				'instructions' => '',
+				'required' => 1,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'Monday' => 'Monday',
+					'Tuesday' => 'Tuesday',
+					'Wednesday' => 'Wednesday',
+					'Thursday' => 'Thursday',
+					'Friday' => 'Friday',
+					'Saturday' => 'Saturday',
+					'Sunday' => 'Sunday',
+				),
+				'default_value' => false,
+				'allow_null' => 1,
+				'multiple' => 0,
+				'ui' => 0,
+				'return_format' => 'value',
+				'ajax' => 0,
+				'placeholder' => '',
+			),
+			array(
+				'key' => 'field_64b522b7b250f',
+				'label' => 'Opening Time',
+				'name' => 'c_general_business_hours_opening_time',
+				'type' => 'time_picker',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'display_format' => 'g:i a',
+				'return_format' => 'g:i a',
+			),
+			array(
+				'key' => 'field_64b522ceb2510',
+				'label' => 'Closing Time',
+				'name' => 'c_general_business_hours_closing_time',
+				'type' => 'time_picker',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'display_format' => 'g:i a',
+				'return_format' => 'g:i a',
+			),
 
+		),
+	),
 		//Location WYSIWYG start
 		array(
 			'key' => 'field_64c0f9d6ed62a',
@@ -235,8 +234,9 @@ acf_add_local_field_group(array(
 			'media_upload' => 0,
 			'delay' => 0,
 		),
+		
 		//Location WYSIWYG end
-
+	
 		//Location Link start
 		array(
 			'key' => 'field_64c10698072be',
@@ -254,8 +254,8 @@ acf_add_local_field_group(array(
 			'return_format' => 'array',
 		),
 		//Location Link end
-
 	),
+
 	'location' => array(
 		array(
 			array(

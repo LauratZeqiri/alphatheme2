@@ -165,7 +165,7 @@ if ($business_hours) {
 <div class="mapouter">
     <div class="gmap_canvas">
         <iframe 
-        width="770" 
+        width="1000" 
         height="510" 
         id="gmap_canvas" 
         src="<?php echo $location_link['url'] ?>"
@@ -176,8 +176,8 @@ if ($business_hours) {
 
         </iframe>
         <br>
-        <style>.mapouter{position:relative;text-align:right;height:510px;width:770px;}</style>
-        <style>.gmap_canvas {overflow:hidden;background:none!important;height:510px;width:770px; border-radius:10px; margin-top:30px; margin-left: 15%;}</style>
+        <style>.mapouter{position:relative;text-align:right;height:510px;width:100%;}</style>
+        <style>.gmap_canvas {overflow:hidden;background:none!important;height:510px;width:100%; border-radius:10px; margin-top:30px;}</style>
     </div>
 
 </div>
