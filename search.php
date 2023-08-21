@@ -3,8 +3,8 @@
 
 <div class="container">
   <div class="search2">
-    <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
-      <input type="search" class="form-control" placeholder="Search" value="<?php echo get_search_query() ?>" name="s" title="Search" />
+    <form role="search" class="form-control1" method="get" action="<?php echo home_url( '/' ); ?>">
+      <input type="search" class="form-control1" placeholder="Search" value="<?php echo get_search_query() ?>" name="s" title="Search" />
 
       <?php
         wp_dropdown_categories( array(
@@ -18,22 +18,25 @@
           'value_field' => 'term_id'
           ) );
       ?>
-      <button type="submit" class="icon-search"><i class="fa fa-search"></i></button>
+      <button type="submit" class="icon-searchh1"><i class="fa fa-search"></i></button>
     </form>
   </div>
-  <div class="search">
+  <div class="search10">
     <div class="form-search">
-      <?php 
-      if( have_posts() ):
-        while( have_posts() ): the_post();
-          get_template_part('content', 'search');
-        endwhile;
-      else:
-      ?>
-      <p>No results found!</p>
-      <?php endif; ?>
+        <?php 
+        if (have_posts()):
+            while (have_posts()): the_post();
+                get_template_part('content', 'search');
+            endwhile;
+        else:
+        ?>
+        <div class="no-results-container">
+            <p class="no-results-message">No results found!</p>
+        </div>
+        <?php endif; ?>
     </div>
-  </div>
+</div>
+
 </div>
 
 

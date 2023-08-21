@@ -1,24 +1,36 @@
 @charset "UTF-8";
+/* Styles for the FAQ module container */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
-.faq-module, .faq {
+.faq-module {
   background-color: #F8FAFC;
   position: relative;
+  height: 300px;
 }
 
+/* Styles for the main FAQ container */
+.faq {
+  background-color: #F8FAFC;
+  position: relative;
+  padding-bottom: 20px;
+}
 
+/* Styles for the FAQ section container */
 .faq_section {
   margin: 0 auto;
   border-radius: 16px;
   position: relative;
 }
 
+/* Styles for the FAQ section heading */
 .faq_section h1 {
-  padding: 15px 10px 10px;
+  padding: 10px;
+  padding-top: 15px;
 }
 
+/* Styles for each individual FAQ item */
 .faq__questions__items__item {
   background: #FDFEFD;
   color: #6C6C6C;
@@ -32,6 +44,7 @@
   cursor: pointer;
 }
 
+/* Styles for the FAQ answers */
 .answer {
   background: rgba(15, 23, 42, 0.0784313725);
   color: #6C6C6C;
@@ -46,13 +59,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
-}
-
-.chevron {
-  position: absolute;
-  right: 0;
-  margin-right: 30px;
-  margin-top: 10px;
 }
 
 .header {
@@ -756,18 +762,6 @@ footer .footer-paragraf {
   align-items: center;
 }
 
-.input-container input[type=search] {
-  display: flex;
-  flex-direction: column;
-  padding-left: 15px;
-}
-
-.input-container form,
-.input-container input {
-  margin-top: 10px;
-  position: relative;
-}
-
 .title .p {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   font-size: 18px;
@@ -780,6 +774,53 @@ footer .footer-paragraf {
   display: flex;
   flex-direction: column;
   margin-top: -70px;
+}
+
+.input-container input[type=search] {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+}
+
+.input-container form,
+.input-container input {
+  margin-top: 10px;
+  position: relative;
+}
+
+.form-control[type=search] {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  width: 700px;
+}
+
+.form-control input[type=search]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.icon-search {
+  margin: 9px 0 0 -6px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.icon-search:hover {
+  cursor: pointer;
+}
+
+.input-container input[type=search] {
+  float: left;
+}
+
+.location-dropdown {
+  border-radius: 3px;
+  border: 2px solid #ccc;
+  margin: 0px 5px;
+  padding: 10px;
 }
 
 .fas.fa-thumbs-up {
@@ -1320,12 +1361,7 @@ body {
   text-align: center;
 }
 
-.search-123 {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.search-123 form, input[type=search] {
+.form-control1[type=search] {
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 5px;
@@ -1334,13 +1370,19 @@ body {
   width: 700px;
 }
 
-.search-123 input[type=search]::placeholder {
-  color: #999;
-}
-
-.search-123 input[type=search]:focus {
+.form-control1 input[type=search]:focus {
   border-color: #007bff;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.icon-searchh1 {
+  margin: 10px 0 0 -2px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.icon-searchh1:hover {
+  cursor: pointer;
 }
 
 .first {
@@ -1367,34 +1409,45 @@ body {
   margin: 50px 0 20px 0;
 }
 
-.search .form-search p {
-  margin: 0;
-  padding: 15px;
-  width: 670px;
-  text-align: center;
-  color: red;
-  font-size: 20px;
-  font-weight: 500;
+.no-results-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8d7da;
+  animation: fadeIn 0.5s ease-in-out, moveUpDown 2s infinite alternate;
 }
 
-.input-container {
-  float: left;
+.search10 {
+  width: 89%;
+  justify-content: center;
 }
 
-.input-container input[type=search] {
-  float: left;
+.no-results-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #721c24;
+  background-color: #f5c6cb;
+  border: 1px solid #f1b0b7;
+  border-radius: 5px;
+  padding: 10px 20px;
 }
 
-.icon-search {
-  margin: 10px 0 0 0;
-  padding: 12px;
-  border-radius: 8px;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
-.icon-search:hover {
-  cursor: pointer;
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
-
 .location-dropdown {
   border-radius: 3px;
   border: 2px solid #ccc;

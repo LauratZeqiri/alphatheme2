@@ -1,9 +1,8 @@
-.search-123 {
-  display: flex;
-  margin-bottom: 20px;
-}
 
-.search-123 form, input[type="search"] {
+// content-search style ***************************
+
+// search form icon
+.form-control1[type="search"] {
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 5px;
@@ -12,16 +11,19 @@
   width: 700px;
 }
 
-.search-123 input[type="search"]::placeholder {
-  color: #999;
-}
-
-.search-123 input[type="search"]:focus {
+.form-control1 input[type="search"]:focus {
   border-color: #007bff;
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
+.icon-searchh1{
+  margin:10px 0 0 -2px;
+  padding:12px;
+  border-radius:8px;
+}
+.icon-searchh1:hover{
+  cursor:pointer;
+}
 
-// content-search style 
 
 .first {
 display:flex;
@@ -35,40 +37,55 @@ object-fit:cover;
 border-radius: 45%;
 }
 .clearfix {
-background-color: #f1f1f1;
-margin-bottom: 10px;
-border: 1px solid #ececec;
-border-radius: 8px;
-}
+  background-color: #f1f1f1;
+  margin-bottom: 10px;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  }
 .search2 input[type=search] {
 margin: 50px 0 20px 0;
 }
-.search .form-search p{
-margin: 0;
-padding: 15px;
-width: 670px;
-text-align: center;
-color: red;
-font-size: 20px;
-font-weight: 500;
+
+.no-results-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8d7da; 
+  animation: fadeIn 0.5s ease-in-out, moveUpDown 2s infinite alternate; 
+ 
+}
+.search10{
+  width: 89%;
+  justify-content: center;
+}
+.no-results-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #721c24; 
+  background-color: #f5c6cb; 
+  border: 1px solid #f1b0b7; 
+  border-radius: 5px;
+  padding: 10px 20px;
 }
 
-.input-container  {
-float: left;
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
 }
-// search form icon
 
-.input-container input[type=search] {
-  float: left;
+@keyframes moveUpDown {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px); 
+  }
 }
-.icon-search{
-    margin:10px 0 0 0;
-    padding:12px;
-    border-radius:8px;
-}
-.icon-search:hover{
-    cursor:pointer;
-}
+
 
 .location-dropdown
 {
