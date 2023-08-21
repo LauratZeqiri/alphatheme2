@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* Styles for the FAQ module container */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
@@ -10,27 +9,23 @@
   height: 300px;
 }
 
-/* Styles for the main FAQ container */
 .faq {
   background-color: #F8FAFC;
   position: relative;
   padding-bottom: 20px;
 }
 
-/* Styles for the FAQ section container */
 .faq_section {
   margin: 0 auto;
   border-radius: 16px;
   position: relative;
 }
 
-/* Styles for the FAQ section heading */
 .faq_section h1 {
   padding: 10px;
   padding-top: 15px;
 }
 
-/* Styles for each individual FAQ item */
 .faq__questions__items__item {
   background: #FDFEFD;
   color: #6C6C6C;
@@ -44,7 +39,6 @@
   cursor: pointer;
 }
 
-/* Styles for the FAQ answers */
 .answer {
   background: rgba(15, 23, 42, 0.0784313725);
   color: #6C6C6C;
@@ -59,6 +53,17 @@
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+}
+
+.answer {
+  display: none;
+}
+
+.chevron {
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+  margin-top: 10px;
 }
 
 .header {
