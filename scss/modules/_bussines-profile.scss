@@ -298,7 +298,7 @@
 
  //Forma per Vlersim 
  .rating-forma {
- width: 700px;
+//  width: 700px;
  
   margin: 0 auto;
   padding: 20px;
@@ -340,7 +340,9 @@
 }
 
 
-
+#komenti-id{
+  font-size: 20px;
+}
 .star:hover {
   color: rgba(255, 217, 0, 0.49);
 }
@@ -369,7 +371,7 @@
 
 
 .feedback{
-  width: 700px;
+  // width: 700px;
   margin: 0 auto;
   background-color: #f9f9f9; 
   border: 1px solid #e0e0e0;
@@ -403,6 +405,7 @@
   text-align:right;
   height:510px;
   width:100%;
+  margin-bottom: 60px;
 }
 
 .gmap_canvas {
@@ -413,6 +416,10 @@
   margin-top:30px;
 }
 
+.location-unknow{
+  margin-top: 20px;
+  font-size: 20px;
+}
 ///////////////////////////////////////////////////////
 
 .feedback-section {
@@ -468,4 +475,15 @@
 .feedback-comment {
   font-weight: bold;
   margin-top: 10px;
+}
+
+
+//////////////////////
+
+.location-link{
+  text-align: center;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+ 
 }

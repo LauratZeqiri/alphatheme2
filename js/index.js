@@ -37,6 +37,7 @@ jQuery(function($) {
     const ratingInput = document.getElementById('user_rating_input');
     const submitButton = document.getElementById('submit');
     const commentField = document.getElementById('comment');
+    const komentiLabel = document.getElementById('komenti-id');
 
     stars.forEach(star => {
         star.addEventListener('click', () => {
@@ -53,17 +54,23 @@ jQuery(function($) {
             });
 
             if (rating > 0) {
-                submitButton.removeAttribute('disabled');
                 commentField.removeAttribute('disabled');
+               
             } else {
-                submitButton.setAttribute('disabled', 'disabled');
                 commentField.setAttribute('disabled', 'disabled');
-            }
+                        }
         });
     });
+
+    submitButton.addEventListener('click', (event) => {
+        if (commentField.value.trim() === '') {
+            event.preventDefault();
+            alert('Ju lutemi, plotësoni komentin para se të vlerësoni.');
+        }
+    });
+
 });
-  
-  
+
     
   function showSuccessPopup(message, seconds) {
       var popup = $('#successPopup');
