@@ -760,6 +760,107 @@ footer .footer-paragraf {
   content: ">";
 }
 
+/*Desktop L*/
+@media (min-width: 1440px) {
+  .gallery .container {
+    max-width: 1200px;
+    margin: 50px auto;
+  }
+  .gallery .gallerycarousel .gallerycarousel1 img {
+    height: 250px;
+    transition: transform 0.3s ease;
+  }
+  .gallery .gallerycarousel .gallerycarousel1 p {
+    font-size: 18px;
+  }
+  .gallery .slick-prev,
+  .gallery .slick-next {
+    opacity: 1;
+  }
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  .gallery .container {
+    max-width: 960px;
+    margin: 50px auto;
+  }
+  .gallery .gallerycarousel .gallerycarousel1 img {
+    height: 200px;
+  }
+  .gallery .slick-prev,
+  .gallery .slick-next {
+    opacity: 1;
+  }
+}
+/* Tablet*/
+@media (max-width: 768px) {
+  .gallery .gallerycarousel .gallerycarousel1 img {
+    height: 120px;
+  }
+  .gallery .slick-prev,
+  .gallery .slick-next {
+    position: absolute;
+    top: 120%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: transparent;
+    font-size: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .gallery:hover .slick-prev,
+  .gallery:hover .slick-next {
+    opacity: 1;
+  }
+  .gallery .slick-prev {
+    left: 40%;
+  }
+  .gallery .slick-next {
+    right: 40%;
+  }
+}
+/*Mobile*/
+@media (max-width: 480px) {
+  .gallery .gallerycarousel .gallerycarousel1 {
+    margin: 0 5px;
+  }
+  .gallery .gallerycarousel .gallerycarousel1 img {
+    height: 100px;
+  }
+  .gallery h1 {
+    font-size: 24px;
+    padding: 0 20px 20px 10px;
+  }
+  .gallery .slick-prev,
+  .gallery .slick-next {
+    position: absolute;
+    top: 120%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: transparent;
+    font-size: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .gallery:hover .slick-prev,
+  .gallery:hover .slick-next {
+    opacity: 1;
+  }
+  .gallery .slick-prev {
+    left: 40%;
+  }
+  .gallery .slick-next {
+    right: 40%;
+  }
+}
 .relationship-section {
   background-color: #EFF6FF;
   height: 96px;
