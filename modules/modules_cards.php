@@ -48,7 +48,7 @@
                             <?php echo get_the_post_thumbnail($service->ID, 'thumbnail'); ?>
                         </div>
                         <h3><?php echo get_the_title($service->ID); ?></h3>
-                        <button class="btn-button"><a href="<?php echo get_permalink($service->ID); ?>">View <?php echo get_the_title($service->ID); ?></a></button>
+                        <button class="btn-button"><a href="<?php echo get_permalink($service->ID); ?>">Read more</a></button>
                     </div>
                 <?php endforeach; ?>
             </div>
