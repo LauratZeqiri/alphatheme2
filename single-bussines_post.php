@@ -1,8 +1,11 @@
 
 
-
 <?php get_header(); 
 ?>
+
+
+
+
 
 <div class="profile">
 <div class="container">
@@ -20,13 +23,42 @@
 <h2> <?php the_field('emri'); ?> </h2>
 </div>
 <div class="bussines-reviews">
-    <p> Reviews: </p>
- 
+    <p>Average Rating:  </p>
+ <?php
 
+if (isset($_POST['submit_feedback'])) {
+ 
+    if (is_user_logged_in()) {
+        $user_id = get_current_user_id();
+        $user_info = get_userdata($user_id);
+        $name_user = $user_info->display_name;
+    }
+    
+    $rating = intval($_POST['user_rating']);
+    $comment = sanitize_textarea_field($_POST['comment']);
+
+    $current_time = current_time('mysql'); 
+
+    $post_id = get_the_ID(); 
+
+    $feedback_data = array(
+        'name' => $name_user,
+        'rating' => $rating,
+        'comment' => $comment,
+        'date' => $current_time,
+    );
+
+    add_post_meta($post_id, 'feedback', $feedback_data);
+}
+$post_id = get_the_ID();
+
+$average_rating = mesatarja_rating($post_id);
+
+
+?>
 <?php
-$reviews = get_field('reviews');
-if ($reviews) {
-    $max = $reviews;
+
+    $max = $average_rating;
     $silver = 5 - $max; 
     for ($i = 0; $i < $max; $i++) {
         echo '<i class="fa-solid fa-star" style="color: gold;"></i>';
@@ -35,7 +67,7 @@ if ($reviews) {
     for ($i = 0; $i < $silver; $i++) {
         echo '<i class="fa-solid fa-star" style="color: gray;"></i>';
     }
-}
+
 ?>
 </div>
 </div>
@@ -149,23 +181,14 @@ if ($business_hours) {
     </div>
   
 </div>
-<div class="right-info">
-       
-       <h4>Location: &nbsp</h4> <span><?php the_field('location'); ?></span>
-
-   </div>
 </div>
-<div class="left-info">
-       
-        
-   </div>
 </div>
 </div>
 <?php $location_link = get_field("location_link") ?>
 <div class="mapouter">
     <div class="gmap_canvas">
         <iframe 
-        width="1000" 
+        width="770" 
         height="510" 
         id="gmap_canvas" 
         src="<?php echo $location_link['url'] ?>"
@@ -176,60 +199,99 @@ if ($business_hours) {
 
         </iframe>
         <br>
-        <style>.mapouter{position:relative;text-align:right;height:510px;width:100%;}</style>
-        <style>.gmap_canvas {overflow:hidden;background:none!important;height:510px;width:100%; border-radius:10px; margin-top:30px;}</style>
+        <style>.mapouter{position:relative;text-align:right;height:510px;width:770px;}</style>
+        <style>.gmap_canvas {overflow:hidden;background:none!important;height:510px;width:770px; border-radius:10px; margin-top:30px; margin-left: 15%;}</style>
     </div>
 
 </div>
+
+<div class="rating-forma">
+    <form method="post" class="feedback-form" id="rating-form">
+        <div class="star-rating">
+            <div class="star-rate">
+                <span class="star" data-rating="1">☆</span>
+                <span class="star" data-rating="2">☆</span>
+                <span class="star" data-rating="3">☆</span>
+                <span class="star" data-rating="4">☆</span>
+                <span class="star" data-rating="5">☆</span>
+            </div>
+        </div>
+        <input type="hidden" id="user_rating_input" name="user_rating" value="0">
+        <label for="comment">Komenti:</label>
+        <textarea name="comment" id="comment" rows="4" disabled></textarea>
+        <input type="submit" name="submit_feedback" id="submit" value="Vlerëso">
+    </form>
 </div>
 
 
+<?php
+
+
+$feedbacks = get_post_meta(get_the_ID(), 'feedback', false);
+
+ if (!empty($feedbacks)) : ?>
+<div class="feedback-section">
+    <?php foreach ($feedbacks as $feedback) : ?>
+        <div class="feedback">
+            <div class="name-rating">
+                <div class="feed-name">
+                    <p class="feedback-name"><?php echo esc_html($feedback['name']); ?></p>
+                    <p class="feedback-date"><?php echo date('F j, Y', strtotime($feedback['date'])); ?></p>
+                </div>
+                <div class="rating-value" data-rating="<?php echo intval($feedback['rating']); ?>">
+                    <?php
+                    $ratingValue = intval($feedback['rating']);
+                    $max = $ratingValue;
+                    $silver = 5 - $max;
+                    for ($i = 0; $i < $max; $i++) {
+                        echo '<i class="fa-solid fa-star" style="color: gold;"></i>';
+                    }
+                    for ($i = 0; $i < $silver; $i++) {
+                        echo '<i class="fa-solid fa-star" style="color: gray;"></i>';
+                    }
+                    ?>
+                </div>
+            </div>
+            <p class="feedback-comment"><?php echo  'Komenti: '. esc_html($feedback['comment']); ?></p>
+        </div>
+    <?php endforeach; ?>
+</div>
+<?php endif; ?>
+
+
+
+    <?php 
+function mesatarja_rating($post_id) {
+$feedbacks = get_post_meta($post_id, 'feedback', false);
+
+$all_ratings = array();
+
+foreach ($feedbacks as $feedback) {
+    if (isset($feedback['rating']) && !empty($feedback['rating'])) {
+        $all_ratings[] = intval($feedback['rating']);
+    }
+}
+
+$total_ratings = count($all_ratings);
+
+if ($total_ratings === 0) {
+     return 0; 
+} else {
+    $sum_ratings = array_sum($all_ratings);
+    $average_rating = $sum_ratings / $total_ratings;
+    return  round($average_rating);
+}
+ }
+
+?>
 
 
 
  <?php include (get_template_directory().'/include/module.php'); ?>
-<div id="comments" class="comments-area">
-    <?php comment_form(); ?>
-    
+
+
+  </div>
 </div>
-
-<div class="komente">
-    <?php
-    if (get_comments_number() > 0) {
-       
-        $comments = get_comments(array(
-            'post_id' => get_the_ID(),
-            'status' => 'approve', 
-            
-        ));
-
-        if ($comments) {
-            foreach ($comments as $comment) {
-                ?>
-                <div class="comment-content">
-                    <div class="comment-meta">
-                        <span class="comment-time"><?php echo get_comment_date('F j, Y', $comment->comment_ID); ?></span>
-                    </div>
-                    <div class="comment-text">
-                       
-                        <span class="comment-author"><?php echo $comment->comment_author; ?> :</span>  <?php echo $comment->comment_content; ?>
-                    </div>
-                </div>
-                <?php
-            }
-        }
-    }
-    ?>
-</div>
-
-</div>
-<?php
-include 'comment.php'; ?>
-
-
-
-   
-
 
 <?php get_footer(); ?>
 
