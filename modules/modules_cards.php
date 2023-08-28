@@ -8,11 +8,6 @@
     $titull = get_sub_field('field_64d258aab7833');
     ?>
     <h2 class="title-cards"><?php echo $titull; ?></h2>
-
-  
-
-
-
     <?php if ($post_type_selected === 'pages'): ?>
         <?php $selected_pages = get_sub_field('pages'); ?>
         <?php if (!empty($selected_pages)): ?>
@@ -53,7 +48,7 @@
                             <?php echo get_the_post_thumbnail($service->ID, 'thumbnail'); ?>
                         </div>
                         <h3><?php echo get_the_title($service->ID); ?></h3>
-                        <button class="btn-button"><a href="<?php echo get_permalink($service->ID); ?>">View Service</a></button>
+                        <button class="btn-button"><a href="<?php echo get_permalink($service->ID); ?>">Read more</a></button>
                     </div>
                 <?php endforeach; ?>
             </div>

@@ -28,7 +28,7 @@ if (get_row_layout() === 'homepage_header') {
 
     <div class="div">
      <div class="input-container">
-            <form role="search" method="get" action="<?php echo home_url( '/' ); ?>">
+            <form role="search" class="form-control" method="get" action="<?php echo home_url( '/' ); ?>">
                 <input type="search" class="form-control" placeholder="Search" value="<?php echo get_search_query() ?>" name="s" title="Search" />
                 <?php
                     wp_dropdown_categories( array(
