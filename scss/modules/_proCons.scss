@@ -1,35 +1,17 @@
 $green: #008000;
 $red: #FF0000;
 
-.fas.fa-thumbs-up {
-  color: $green;
-  font-size: 24px;
-  margin-right: 12px;
-//   margin-left: 350px;
-// }
-}
-
+.fas.fa-thumbs-up,
 .fas.fa-thumbs-down {
-  color: $red;
   font-size: 24px;
   margin-right: 12px;
-  // margin-left: 350px;
 }
 
-
-
-//  .quick-h1 h1 {
-//   // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-//   margin-top: 20px;
-// }
-
-.pros,
-.cons {
-  // margin-right: 50px;
-  // margin-top: 40px;
-  flex: 1;
-  // padding: 10px;
-  box-sizing: border-box;
+.columns-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
 .column {
@@ -42,13 +24,6 @@ $red: #FF0000;
     font-size: 16px;
     width: 95%;
   }
-}
-
-.columns-section {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  margin-top: 20px;
 }
 
 .cons .column {
@@ -66,10 +41,3 @@ $red: #FF0000;
   border-radius: 15px;
   background: linear-gradient(to right, $green 0%, $green 5px, rgba(0, 128, 0, 0.1) 5px, rgba(0, 128, 0, 0.1) 100%);
 }
-
-// h2 {
-//   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-//   margin-bottom: 10px;
-//   font-weight: bold;
-//   font-size: 20px;
-// }

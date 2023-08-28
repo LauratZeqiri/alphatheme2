@@ -782,33 +782,12 @@ footer .footer-paragraf {
   margin-top: -70px;
 }
 
-.fas.fa-thumbs-up {
-  color: #008000;
-  font-size: 24px;
-  margin-right: 12px;
-}
 
+/* Common styles for all screen sizes */
+.fas.fa-thumbs-up,
 .fas.fa-thumbs-down {
-  color: #FF0000;
   font-size: 24px;
   margin-right: 12px;
-}
-
-.pros,
-.cons {
-  flex: 1;
-  box-sizing: border-box;
-}
-
-.column {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.column p {
-  padding-left: 20px;
-  font-size: 16px;
-  width: 95%;
 }
 
 .columns-section {
@@ -818,36 +797,55 @@ footer .footer-paragraf {
   margin-top: 20px;
 }
 
-.cons .column {
-  width: 500px;
-  height: 43px;
-  margin-bottom: 10px;
-  border-radius: 15px;
-  background: linear-gradient(to right, #FF0000 0%, #FF0000 5px, rgba(255, 0, 0, 0.1) 5px, rgba(255, 0, 0, 0.1) 100%);
-}
-
-.pros .column {
-  width: 500px;
-  height: 43px;
-  margin-bottom: 10px;
-  border-radius: 15px;
-  background: linear-gradient(to right, #008000 0%, #008000 5px, rgba(0, 128, 0, 0.1) 5px, rgba(0, 128, 0, 0.1) 100%);
-}
-
-.quick-cont {
+.column {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  position: relative;
 }
 
-.quick-section {
-  display: flex;
-  grid-gap: 10px;
-  box-sizing: border-box;
+.column p {
+  padding-left: 20px;
+  font-size: 16px;
+  width: 95%;
 }
 
+.cons .column,
+.pros .column {
+  width: 100%;
+  height: 43px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+@media (min-width: 768px) {
+  .columns-section {
+    flex-direction: row;
+  }
+
+  .cons .column,
+  .pros .column {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .cons .column,
+  .pros .column {
+    width: 500px;
+    background: linear-gradient(to right, #FF0000 0%, #FF0000 5px, rgba(255, 0, 0, 0.1) 5px, rgba(255, 0, 0, 0.1) 100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .column p {
+    padding-left: 10px;
+  }
+}
+
+
+
+
+/* Common styles for all screen sizes */
 body {
   background-color: #f9f7f3;
 }
@@ -858,10 +856,6 @@ body {
   color: #2c3e50;
   margin-bottom: 10px;
   text-transform: uppercase;
-}
-
-.title-quick span {
-  text-decoration: underline;
 }
 
 .co {
@@ -905,9 +899,11 @@ body {
   text-decoration: none;
   position: relative;
 }
+
 .link a:hover {
   color: #1b094d;
 }
+
 .link a::after {
   content: "";
   position: absolute;
@@ -920,6 +916,7 @@ body {
   transition: transform 0.2s;
   transform-origin: left;
 }
+
 .link a:hover::after {
   transform: scaleX(1);
 }
@@ -927,6 +924,36 @@ body {
 .thumb-up {
   color: yellow;
   font-size: 24px;
+}
+
+/* Responsive styles for tablet */
+@media (max-width: 768px) {
+  .quick-cont {
+    justify-content: center;
+  }
+  .quick-section {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Responsive styles for smartphone */
+@media (max-width: 480px) {
+  .quick-h1 {
+    font-size: 28px;
+  }
+}
+
+/* Responsive styles for desktop */
+@media (min-width: 1200px) {
+  .quick-cont {
+    justify-content: space-between;
+  }
+  .quick-section {
+    display: flex;
+    grid-gap: 10px;
+    box-sizing: border-box;
+  }
 }
 
 .author {
@@ -1409,35 +1436,69 @@ body {
   background-attachment: fixed;
   opacity: 0.8;
 }
+
 .parallax-section .parallax-content {
   position: absolute;
-  width: 530px;
+  width: 90%;
+  max-width: 530px;
   top: 50%;
-  left: 70%;
-  transform: translate(-50%, -75%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
-}
-.parallax-section .parallax-content h2 {
-  font-size: 60px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: black;
+  text-align: center;
+  padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);
-}
-.parallax-section .parallax-content p {
-  font-size: 35px;
-  margin-bottom: 0;
-  font-weight: 600;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px 20px;
   border-radius: 5px;
 }
+
+.parallax-section .parallax-content h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.parallax-section .parallax-content p {
+  font-size: 24px;
+  margin-bottom: 0;
+  font-weight: 600;
+  padding: 10px 15px;
+}
+
+@media (max-width: 768px) {
+  .parallax-section .parallax-content {
+    max-width: 80%;
+  }
+
+  .parallax-section .parallax-content h2 {
+    font-size: 32px;
+  }
+
+  .parallax-section .parallax-content p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax-section .parallax-content {
+    max-width: 90%;
+  }
+
+  .parallax-section .parallax-content h2 {
+    font-size: 28px;
+  }
+
+  .parallax-section .parallax-content p {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
+
+
 
 .testimonial-section {
   background-color: #F8FAFC;
   margin: 10px;
-}
+  padding: 0 10px; }
 
 .testimonial-wrapper {
   display: flex;
@@ -1445,22 +1506,24 @@ body {
   justify-content: space-between;
   margin-top: 20px;
 }
+
 .testimonial-wrapper .card {
-  width: 285px;
+  width: 100%; 
+  max-width: 350px; 
   border-radius: 16px;
   background: #FFF;
   box-shadow: 1px 3px 4px 1px rgba(0, 0, 0, 0.25);
   padding: 20px;
   margin-bottom: 20px;
-  height: 420px;
-  overflow: hidden;
 }
+
 .testimonial-wrapper .card .user-image {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
 }
+
 .testimonial-wrapper .card .user-image img {
   border-radius: 30px;
   background: #D9D9D9;
@@ -1468,9 +1531,11 @@ body {
   height: 130px;
   object-fit: cover;
 }
+
 .testimonial-wrapper .card .user-content {
   margin-top: 20px;
 }
+
 .testimonial-wrapper .card .user-content h4 {
   color: #000;
   text-align: center;
@@ -1481,22 +1546,19 @@ body {
   line-height: 23px;
   margin-bottom: 7px;
 }
+
 .testimonial-wrapper .card .user-content span {
   font-size: 12px;
   color: #999;
 }
+
 .testimonial-wrapper .card .user-content p {
-  font-size: 18px;
+  font-size: 16px; 
   line-height: 1.5;
   color: #333333;
   background-color: #ffffff;
   border-radius: 8px;
-  color: var(--kit-colors-slate-900, rgba(15, 23, 42, 0.8941176471));
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-  word-spacing: 1px;
+  padding: 10px; 
   text-align: justify;
 }
 
@@ -1512,7 +1574,26 @@ body {
   font-style: normal;
   font-weight: 800;
   line-height: 36px;
+  text-align: center; 
 }
+
+
+@media (max-width: 768px) {
+  .testimonial-wrapper {
+    justify-content: center; 
+  }
+
+  .testimonial-wrapper .card {
+    max-width: 100%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-wrapper {
+    justify-content: center; 
+  }
+}
+
 
 .banner-items {
   display: flex;
