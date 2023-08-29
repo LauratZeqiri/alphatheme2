@@ -1,12 +1,14 @@
-/* Stilizimi për pajisjet desktop */
-.modules-cards-container {
+
+.new-custom-cards-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.card_page, .card_businesses, .card_services {
+.new-custom-card-page,
+.new-custom-card-business,
+.new-custom-card-service {
     flex: 1 0 220px; 
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -16,14 +18,15 @@
     margin: 10px;
 }
 
-.modules-card-image img {
+.new-custom-card-image img {
     width: 100%;
     object-fit: cover;
     border-radius: 8px;
     height: 200px;
+   
 }
 
-.title-cards {
+.new-custom-title {
     display: inline-block;
     padding: 0 10px;
     color: #000;
@@ -33,13 +36,7 @@
     line-height: 27px;
 }
 
-.modules-cards-container h3 {
-    display: inline-block;
-    font-size: 20px;
-    margin-top: 40px;
-}
-
-.btn-button {
+.new-custom-btn {
     width: 100%;
     padding: 10px 16px;
     border-radius: 16px;
@@ -51,13 +48,15 @@
     line-height: 21px;
 }
 
-.btn-button a{
+.new-custom-link {
     text-decoration: none;
     color: #0f172a;
 }
+/* Stilizimi i butonave të karuselit */
 
-.slider .slick-prev,
-.slider .slick-next {
+
+.new-custom-cards-container .slick-prev,
+.new-custom-cards-container .slick-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -72,21 +71,21 @@
     transition: opacity 0.3s ease;
 }
 
-.slider:hover .slick-prev,
-.slider:hover .slick-next {
+.new-custom-cards-container:hover .slick-prev,
+.new-custom-cards-container:hover .slick-next {
     opacity: 1;
 }
 
-.slider .slick-prev {
+.new-custom-cards-container .slick-prev {
     left: -3%;
 }
 
-.slider .slick-next {
+.new-custom-cards-container .slick-next {
     right: -3%;
 }
 
-.slider .slick-prev:before,
-.slider .slick-next:before {
+.new-custom-cards-container .slick-prev:before,
+.new-custom-cards-container .slick-next:before {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -99,50 +98,10 @@
     border-radius: 50%;
 }
 
-.slider .slick-prev:before {
+.new-custom-cards-container .slick-prev:before {
     content: "\003c"; 
 }
 
-.slider .slick-next:before {
+.new-custom-cards-container .slick-next:before {
     content: "\003e";
-}
-
-/* Stilizimi për pajisjet tablet */
-@media (max-width: 768px) {
-    .modules-cards-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .card_page, .card_businesses, .card_services {
-        flex: 1 0 auto;
-        margin: 10px 0;
-    }
-
-    .modules-card-image img {
-        height: 150px;
-    }
-
-    .title-cards {
-        font-size: 28px;
-        line-height: 24px;
-    }
-
-    .modules-cards-container h3 {
-        font-size: 18px;
-        margin-top: 20px;
-    }
-}
-
-/* Stilizimi për pajisjet mobile */
-@media (max-width: 480px) {
-    .title-cards {
-        font-size: 24px;
-        line-height: 21px;
-    }
-
-    .modules-cards-container h3 {
-        font-size: 16px;
-        margin-top: 10px;
-    }
 }
