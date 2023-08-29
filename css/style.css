@@ -1095,11 +1095,7 @@ footer .footer-paragraf {
   padding: 10px;
 }
 
-.fas.fa-thumbs-up {
-  color: #008000;
-  font-size: 24px;
-  margin-right: 12px;
-}
+/* Common styles for all screen sizes */
 .fas.fa-thumbs-up,
 .fas.fa-thumbs-down {
   font-size: 24px;
@@ -1131,6 +1127,11 @@ footer .footer-paragraf {
   height: 43px;
   margin-bottom: 10px;
   border-radius: 15px;
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.1) 5px, #FF0000 5px, #FF0000 95%, rgba(255, 0, 0, 0.1) 95%);
+}
+
+.pros .column {
+  background: linear-gradient(to right, rgba(0, 128, 0, 0.1) 5px, #008000 5px, #008000 95%, rgba(0, 128, 0, 0.1) 95%);
 }
 
 @media (min-width: 768px) {
@@ -1148,7 +1149,6 @@ footer .footer-paragraf {
   .cons .column,
   .pros .column {
     width: 500px;
-    background: linear-gradient(to right, #FF0000 0%, #FF0000 5px, rgba(255, 0, 0, 0.1) 5px, rgba(255, 0, 0, 0.1) 100%);
   }
 }
 
@@ -1242,33 +1242,58 @@ body {
   font-size: 24px;
 }
 
-/* Responsive styles for tablet */
-@media (max-width: 768px) {
-  .quick-cont {
-    justify-content: center;
-  }
-  .quick-section {
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
-/* Responsive styles for smartphone */
-@media (max-width: 480px) {
-  .quick-h1 {
-    font-size: 28px;
-  }
-}
-
-/* Responsive styles for desktop */
 @media (min-width: 1200px) {
   .quick-cont {
     justify-content: space-between;
   }
   .quick-section {
     display: flex;
-    grid-gap: 10px;
-    box-sizing: border-box;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 20px;
+  }
+  .co {
+    padding: 25px;
+  }
+  .quick-h1 {
+    font-size: 32px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .quick-cont {
+    justify-content: space-between;
+  }
+  .quick-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .co {
+    padding: 15px;
+    width: calc(50% - 10px); 
+    margin-bottom: 20px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .quick-h1 {
+    font-size: 28px;
+  }
+  .quick-cont {
+    flex-direction: column;
+  }
+  .quick-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .co {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1827,27 +1852,28 @@ body {
 }
 
 
-
 .testimonial-section {
   background-color: #F8FAFC;
   margin: 10px;
-  padding: 0 10px; }
+  padding: 0 10px; 
+}
 
 .testimonial-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: left; 
   margin-top: 20px;
 }
 
 .testimonial-wrapper .card {
   width: 100%; 
-  max-width: 350px; 
+  max-width: 320px; 
   border-radius: 16px;
   background: #FFF;
   box-shadow: 1px 3px 4px 1px rgba(0, 0, 0, 0.25);
   padding: 20px;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .testimonial-wrapper .card .user-image {
@@ -1860,8 +1886,8 @@ body {
 .testimonial-wrapper .card .user-image img {
   border-radius: 30px;
   background: #D9D9D9;
-  width: 145px;
-  height: 130px;
+  width: 120px; 
+  height: 120px; 
   object-fit: cover;
 }
 
@@ -1873,10 +1899,10 @@ body {
   color: #000;
   text-align: center;
   font-family: Inter;
-  font-size: 26px;
+  font-size: 24px; 
   font-style: normal;
   font-weight: 500;
-  line-height: 23px;
+  line-height: 28px; 
   margin-bottom: 7px;
 }
 
@@ -1891,8 +1917,11 @@ body {
   color: #333333;
   background-color: #ffffff;
   border-radius: 8px;
-  padding: 10px; 
+  font-weight: 400;
+  line-height: 22px; 
+  word-spacing: 1px;
   text-align: justify;
+  padding: 10px; 
 }
 
 .row {
@@ -1907,25 +1936,28 @@ body {
   font-style: normal;
   font-weight: 800;
   line-height: 36px;
-  text-align: center; 
+  text-align: center;
+}
+
+
+@media (min-width: 769px) {
+  .testimonial-wrapper {
+    justify-content: space-between; 
+  }
+
+  .testimonial-wrapper .card {
+    max-width: 285px; 
+    margin: 0 0 20px; 
+  }
 }
 
 
 @media (max-width: 768px) {
-  .testimonial-wrapper {
-    justify-content: center; 
-  }
-
   .testimonial-wrapper .card {
-    max-width: 100%; 
+    max-width: 45%; 
   }
 }
 
-@media (max-width: 480px) {
-  .testimonial-wrapper {
-    justify-content: center; 
-  }
-}
 
 
 .banner-items {
