@@ -35,3 +35,33 @@
   border-radius: 5px;
 }
 }
+
+
+@media (max-width: 768px) {
+  .parallax-section .parallax-content {
+    max-width: 80%;
+  }
+
+  .parallax-section .parallax-content h2 {
+    font-size: 32px;
+  }
+
+  .parallax-section .parallax-content p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .parallax-section .parallax-content {
+    max-width: 90%;
+  }
+
+  .parallax-section .parallax-content h2 {
+    font-size: 28px;
+  }
+
+  .parallax-section .parallax-content p {
+    font-size: 18px;
+    padding: 10px;
+  }
+}

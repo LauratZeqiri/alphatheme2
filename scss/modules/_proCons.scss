@@ -41,3 +41,29 @@ $red: #FF0000;
   border-radius: 15px;
   background: linear-gradient(to right, $green 0%, $green 5px, rgba(0, 128, 0, 0.1) 5px, rgba(0, 128, 0, 0.1) 100%);
 }
+
+
+
+@media (min-width: 768px) {
+  .columns-section {
+    flex-direction: row;
+  }
+
+  .cons .column,
+  .pros .column {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .cons .column,
+  .pros .column {
+    width: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  .column p {
+    padding-left: 10px;
+  }
+}

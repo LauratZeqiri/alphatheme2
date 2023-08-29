@@ -82,3 +82,20 @@
     line-height: 36px;
   }
 
+  @media (min-width: 769px) {
+    .testimonial-wrapper {
+      justify-content: space-between; 
+    }
+  
+    .testimonial-wrapper .card {
+      max-width: 285px; 
+      margin: 0 0 20px; 
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    .testimonial-wrapper .card {
+      max-width: 45%; 
+    }
+  }
