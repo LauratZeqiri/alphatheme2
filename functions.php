@@ -122,6 +122,26 @@ function post_type() {
     register_post_type( 'bussines_post', $args );
 }
 add_action( 'init', 'post_type' );
+function events_post_type() {
+    $event_labels = array(
+        'name' => 'Events',
+        'singular_name' => 'Event',
+        'menu_name' => 'Events',
+    );
+
+    $event_args = array(
+        'labels' => $event_labels,
+        'public' => true,
+        'has_archive' => true,
+        'menu_position' => 6,  // You can adjust the menu position as needed
+        'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'comments' ),
+        'capability_type' => 'post', 
+    );
+
+    register_post_type( 'event_post', $event_args );
+}
+add_action( 'init', 'events_post_type' );
+
 
 function blog_scripts() {
     // Register the script
