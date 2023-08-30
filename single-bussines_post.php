@@ -162,7 +162,7 @@ if ($business_hours) {
 </div>
 <div class="text-bussines-profile">
 <h3> About Us </h3>
- <span>  <?php the_field('informata'); ?> </span>
+ <span class="aboutus">  <?php the_field('informata'); ?> </span>
 </div>
 
 
@@ -186,8 +186,8 @@ if ($business_hours) {
         <div class="mapouter">
             <div class="gmap_canvas">
                 <iframe 
-                width="1000" 
-                height="510" 
+                width="100%" 
+                height="300" 
                 id="gmap_canvas" 
                 src="<?php echo $location_link['url']; ?>"
                 frameborder="0" 
@@ -200,7 +200,7 @@ if ($business_hours) {
         </div>
         <?php else : ?>
         <span class="location-unknow">Location Unknown</span>
-    <?php endif;  ?>
+    <?php endif;   ?>
 </div>
 
    
@@ -271,7 +271,7 @@ if (!empty($feedbacks)) :
     if ($remainingFeedbacks > 0) {
         echo '<button class="button-bussinesprofile" id="load-more-comments">All comments</button>';
     }
-    ?>
+     ?>
 <?php endif;  ?>
 
 <script>
@@ -320,14 +320,12 @@ if ($total_ratings === 0) {
 ?>
 
 
-
-
+<?php get_footer(); ?>
 
 
   </div>
 </div>
  
-<?php get_footer(); ?>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
