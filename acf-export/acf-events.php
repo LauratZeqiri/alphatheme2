@@ -120,6 +120,16 @@ acf_add_local_field_group(array(
 		'append' => '',
 		'maxlength' => '',
 	),
+	
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'event_post',
+			),
+		),
+	),
 
 
 	'menu_order' => 0,
