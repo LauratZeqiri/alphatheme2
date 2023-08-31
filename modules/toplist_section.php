@@ -1,4 +1,5 @@
-<div class="toplist_module container">
+<div class="toplist-section">
+<div class="container">
     <h1 class="toplist-section">TOPLIST</h1>
     <div class="blog-posts">
     <?php if (get_row_layout() === 'toplist_section') {
@@ -35,3 +36,4 @@
         <div class="loadmore">Load More</div>
     </div>
 </div>
+            </div>

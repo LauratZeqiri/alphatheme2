@@ -256,6 +256,17 @@
   
   /* Stili për pajisjet mobile */
   @media screen and (max-width: 480px) {
+    .button-bussinesprofile {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
     .bussines_profile .right-info{
       margin-top: 15px;
     }
@@ -576,6 +587,7 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-bottom: 20px;
 }
 
 
