@@ -1,0 +1,176 @@
+.event-calendar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .expired-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    font-weight: bold;
+  }
+  
+  .expired-label {
+    color: red;
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Grid */
+  .container-event {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  
+    .event_profile {
+      display: flex;
+      flex-direction: column;
+      background-color: #f9f5f2;
+      border: 1px solid #d9ccc7;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+  
+      &:hover {
+        transform: translateY(-5px);
+      }
+    }
+  }
+  
+  /* Style for the event card container */
+  .event-card {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+  
+    /* Style for the "View Event" link */
+    .view-event-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      opacity: 0; /* Initially hidden */
+      transition: opacity 0.3s ease;
+      z-index: 1; /* Display behind the image */
+    }
+  
+    /* Show "View Event" link on event card hover */
+    &:hover .view-event-link {
+      opacity: 1;
+    }
+  
+    /* Style for the event name */
+    .event-emri h2 {
+      font-size: 24px;
+      color: #333;
+    }
+  }
+  .thumbnail-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .thumbnail-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      vertical-align: top;
+      transition: transform 0.3s ease;
+    }
+  }
+  
+  .event-title {
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+  
+    .event-icon {
+      margin-right: 10px;
+      font-size: 24px;
+      color: #333;
+    }
+  }
+  
+  .event-thumbnail i {
+    font-size: 35px;
+    color: #333;
+  }
+  
+  .event-details {
+    flex-grow: 1;
+  
+    h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+  
+    p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .date-container {
+    display: inline-flex;
+    align-items: center;
+  
+    .hyphen::before {
+      content: '\00a0'; /* Add non-breaking space before the hyphen */
+    }
+  
+    .hyphen::after {
+      content: '\00a0'; /* Add non-breaking space after the hyphen */
+    }
+  
+    .event-date {
+      margin: 0 2px;
+      font-weight: bold;
+      color: #666;
+      font-size: 14px;
+    }
+  }
+  
+  /* Additional styles for responsiveness */
+  @media (max-width: 992px) {
+    .event-card {
+      flex-basis: calc(50% - 40px);
+      max-width: calc(50% - 40px);
+    }
+  }
+  
+  .oneliner1 {
+    margin-right: 60px;
+  }
+  
+  @media (max-width: 768px) {
+    .event-card {
+      flex-basis: calc(100% - 40px);
+      max-width: calc(100% - 40px);
+    }
+  }
+    
