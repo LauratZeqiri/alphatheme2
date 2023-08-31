@@ -80,7 +80,9 @@
 
 
 //================================ Forma RE ===========================================
-.contact-section{
+
+  
+  .contact-section{
   background-color: #fafafa;
   height: 650px;
     display: flex;
@@ -94,7 +96,8 @@
   width: 97%;
   margin: 0 auto;
   height: 530px;
-  padding: 40px;
+  // padding: 40px;
+  border-radius: 30px;
   
 }
 .contact-input{
@@ -256,6 +259,145 @@ border: none;
   font-size: 25px;
   z-index: 9999; 
   transition: all 0.3s; 
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .contact-section {
+    height: auto;
+    padding: 20px;
+    align-items: flex-start;
+  }
+
+  .contact-items {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    border-radius: 0;
+  }
+.contact-content{
+  width: 90%;
+  margin: 0 auto;
+}
+  .contact-input {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+
+  .contact-h3 {
+    
+    font-size: 22px;
+  }
+  .contact-info {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+
+  .contact-formgrup input[type="text"],
+  .contact-formgrup textarea {
+    width: 100%;
+  }
+
+  .popup {
+    left: 50%;
+    top: 10%;
+    font-size: 25px;
+    padding: 10px;
+  }
+  .name-input{
+    display: flex;
+    flex-direction: column;
+  }
+  .name-input input{
+    width: 100%;
+  }
+
+  .contact-content h3 {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-section {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .contact-items {
+    padding: 0px;
+  }
+
+  .contact-input {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .contact-h3 {
+    padding-top: 20px;
+    font-size: 22px;
+  }
+
+  .contact-info {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact-formgrup input[type="text"],
+  .contact-formgrup textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .popup {
+    left: 50%;
+    top: 10%;
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .contact-content h3 {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+
+  .addres-font {
+    width: 50px !important;
+    height: 40px;
+  }
+
+  .addres-fo {
+    font-size: 18px;
+  }
+  .name-input{
+    display: flex;
+    flex-direction: column;
+  }
+  .name-input input{
+    width: 100%;
+  }
+
+  .addres-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .contact-formgrup input[type="submit"] {
+    padding: 10px 25px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+
 }
 
 

@@ -1,3 +1,5 @@
+
+
 <?php get_header(); 
 ?>
 
@@ -160,7 +162,7 @@ if ($business_hours) {
 </div>
 <div class="text-bussines-profile">
 <h3> About Us </h3>
- <span>  <?php the_field('informata'); ?> </span>
+ <span class="aboutus">  <?php the_field('informata'); ?> </span>
 </div>
 
 
@@ -179,13 +181,13 @@ if ($business_hours) {
 </div>
 </div>
 <div class="right-info">
-    <?php $location_link = get_field("location_link");
+    <?php  $location_link = get_field("location_link");
     if ($location_link) : ?>
         <div class="mapouter">
             <div class="gmap_canvas">
                 <iframe 
-                width="1000" 
-                height="510" 
+                width="100%" 
+                height="300" 
                 id="gmap_canvas" 
                 src="<?php echo $location_link['url']; ?>"
                 frameborder="0" 
@@ -198,13 +200,13 @@ if ($business_hours) {
         </div>
         <?php else : ?>
         <span class="location-unknow">Location Unknown</span>
-    <?php endif; ?>
+    <?php endif;   ?>
 </div>
 
    
 <?php include (get_template_directory().'/include/module.php'); ?>
 
-<div class="rating-forma">
+ <div class="rating-forma">
     <form method="post" class="feedback-form" id="rating-form">
         <div class="star-rating">
             <div class="star-rate">
@@ -218,7 +220,7 @@ if ($business_hours) {
         <input type="hidden" id="user_rating_input" name="user_rating" value="0">
         <label for="comment" id="komenti-id">Komenti:</label>
         <textarea name="comment" id="comment" rows="4" disabled></textarea>
-        <input type="submit" name="submit_feedback" id="submit" value="Vlerëso">
+        <input type="submit" name="submit_feedback" class="button-bussinesprofile"  id="submit" value="Vlerëso">
     </form>
 </div>
 
@@ -228,34 +230,67 @@ if ($business_hours) {
 
 $feedbacks = get_post_meta(get_the_ID(), 'feedback', false);
 
- if (!empty($feedbacks)) : ?>
-<div class="feedback-section">
-    <?php foreach ($feedbacks as $feedback) : ?>
-        <div class="feedback">
-            <div class="name-rating">
-                <div class="feed-name">
-                    <p class="feedback-name"><?php echo esc_html($feedback['name']); ?></p>
-                    <p class="feedback-date"><?php echo date('F j, Y', strtotime($feedback['date'])); ?></p>
+if (!empty($feedbacks)) :
+    $totalFeedbacks = count($feedbacks);
+    $showFeedbacks = 3; 
+    $remainingFeedbacks = $totalFeedbacks - $showFeedbacks;
+    
+    $feedbacks = array_reverse($feedbacks);
+    ?>
+
+  <div class="feedback-section">
+        <?php  foreach ($feedbacks as $index => $feedback) :
+            $hiddenClass = $index < $showFeedbacks ? '' : 'hidden';
+            ?> 
+            <div class="feedback <?php echo $hiddenClass; ?>">
+                <div class="name-rating">
+                    <div class="feed-name">
+                        <p class="feedback-name"><?php echo esc_html($feedback['name']); ?></p>
+                        <p class="feedback-date"><?php echo date('F j, Y', strtotime($feedback['date'])); ?></p>
+                    </div>
+                    <div class="rating-value" data-rating="<?php echo intval($feedback['rating']); ?>">
+                        <?php
+                        $ratingValue = intval($feedback['rating']);
+                        $max = $ratingValue;
+                        $silver = 5 - $max;
+                        for ($i = 0; $i < $max; $i++) {
+                            echo '<i class="fa-solid fa-star" style="color: gold;"></i>';
+                        }
+                        for ($i = 0; $i < $silver; $i++) {
+                            echo '<i class="fa-solid fa-star" style="color: gray;"></i>';
+                        }
+                        ?>
+                    </div>
                 </div>
-                <div class="rating-value" data-rating="<?php echo intval($feedback['rating']); ?>">
-                    <?php
-                    $ratingValue = intval($feedback['rating']);
-                    $max = $ratingValue;
-                    $silver = 5 - $max;
-                    for ($i = 0; $i < $max; $i++) {
-                        echo '<i class="fa-solid fa-star" style="color: gold;"></i>';
-                    }
-                    for ($i = 0; $i < $silver; $i++) {
-                        echo '<i class="fa-solid fa-star" style="color: gray;"></i>';
-                    }
-                    ?>
-                </div>
+                <p class="feedback-comment"><?php echo  esc_html($feedback['comment']); ?></p>
             </div>
-            <p class="feedback-comment"><?php echo  'Komenti: '. esc_html($feedback['comment']); ?></p>
-        </div>
-    <?php endforeach; ?>
-</div>
-<?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+
+    <?php
+    if ($remainingFeedbacks > 0) {
+        echo '<button class="button-bussinesprofile" id="load-more-comments">All comments</button>';
+    }
+     ?>
+<?php endif;  ?>
+
+<script>
+    const loadMoreButton = document.getElementById('load-more-comments');
+    const feedbackContainer = document.querySelector('.feedback-section');
+
+    loadMoreButton.addEventListener('click', function() {
+        const hiddenFeedbacks = document.querySelectorAll('.feedback.hidden');
+
+        hiddenFeedbacks.forEach(function(feedback) {
+            feedback.classList.remove('hidden');
+        });
+
+        loadMoreButton.style.display = 'none';
+    });
+</script>
+
+
+
 
 
 
@@ -285,14 +320,12 @@ if ($total_ratings === 0) {
 ?>
 
 
-
-
+<?php get_footer(); ?>
 
 
   </div>
 </div>
-
-<?php get_footer(); ?>
+ 
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

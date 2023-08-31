@@ -122,6 +122,26 @@ function post_type() {
     register_post_type( 'bussines_post', $args );
 }
 add_action( 'init', 'post_type' );
+function events_post_type() {
+    $event_labels = array(
+        'name' => 'Events',
+        'singular_name' => 'Event',
+        'menu_name' => 'Events',
+    );
+
+    $event_args = array(
+        'labels' => $event_labels,
+        'public' => true,
+        'has_archive' => true,
+        'menu_position' => 6,  // You can adjust the menu position as needed
+        'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'comments' ),
+        'capability_type' => 'post', 
+    );
+
+    register_post_type( 'event_post', $event_args );
+}
+add_action( 'init', 'events_post_type' );
+
 
 function blog_scripts() {
     // Register the script
@@ -215,6 +235,56 @@ function load_posts_by_ajax_callback() {
     
 
     
+
+
+function blog_script() {
+    $script_data_array = array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'security' => wp_create_nonce('load_more_posts'),
+    );
+    wp_localize_script('custojs', 'blog', $script_data_array);
+}
+add_action( 'wp_enqueue_scripts', 'blog_scripts');
+//add_action('wp_ajax_load_posts_by_ajax1', 'load_posts_by_ajax1_callback');
+//add_action('wp_ajax_nopriv_load_posts_by_ajax1', 'load_posts_by_ajax1_callback');
+
+
+function load_posts_by_ajax1_callback() {
+    check_ajax_referer('load_more_posts', 'security');
+    
+    $current_page = isset($_POST['page']) ? intval($_POST['page']) : 2;
+    
+    $args = array(
+        'post_type' => 'post', // Adjust this to your post type
+        'post_status' => 'publish',
+        'posts_per_page' => 3,
+        'paged' => $current_page,
+        
+    );
+
+    $query = new WP_Query($args);
+    $total = $query->max_num_pages;
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            get_template_part('content', 'search');
+        }
+        wp_reset_postdata();
+    }
+    wp_die();
+}
+
+function search_filter($query) {
+    if ( !is_admin() && $query->is_main_query() ) {
+      if ($query->is_search) {
+        $query->set('paged', ( get_query_var('paged') ) ? get_query_var('paged') : 1 );
+        $query->set('post_type',array('post','bussines_post'));
+        $query->set('posts_per_page',3);
+      }
+    }
+  }
+  add_action( 'pre_get_posts', 'search_filter' );
+
 
     
 
