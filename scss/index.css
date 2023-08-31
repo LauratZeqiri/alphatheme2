@@ -1090,6 +1090,7 @@ footer .footer-paragraf {
   padding: 10px;
 }
 
+/* Common styles for all screen sizes */
 .fas.fa-thumbs-up,
 .fas.fa-thumbs-down {
   font-size: 24px;
@@ -1102,68 +1103,48 @@ footer .footer-paragraf {
   flex-direction: column;
   margin-top: 20px;
 }
-
-.column {
+.columns-section .column {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.column p {
+.columns-section .column p {
   padding-left: 20px;
   font-size: 16px;
   width: 95%;
 }
-
-.cons .column {
-  width: 500px;
+.columns-section .cons .column, .columns-section .pros .column {
+  width: 100%;
   height: 43px;
   margin-bottom: 10px;
   border-radius: 15px;
-  background: linear-gradient(to right, #FF0000 0%, #FF0000 5px, rgba(255, 0, 0, 0.1) 5px, rgba(255, 0, 0, 0.1) 100%);
 }
-
-.pros .column {
-  width: 500px;
-  height: 43px;
-  margin-bottom: 10px;
-  border-radius: 15px;
-  background: linear-gradient(to right, #008000 0%, #008000 5px, rgba(0, 128, 0, 0.1) 5px, rgba(0, 128, 0, 0.1) 100%);
+.columns-section .cons .column:nth-child(odd), .columns-section .pros .column:nth-child(odd) {
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.1) 5px, #FF0000 5px, #FF0000 95%, rgba(255, 0, 0, 0.1) 95%);
 }
-
+.columns-section .cons .column:nth-child(even), .columns-section .pros .column:nth-child(even) {
+  background: linear-gradient(to right, rgba(0, 128, 0, 0.1) 5px, #008000 5px, #008000 95%, rgba(0, 128, 0, 0.1) 95%);
+}
 @media (min-width: 768px) {
   .columns-section {
     flex-direction: row;
   }
-  .cons .column,
-  .pros .column {
+  .columns-section .cons .column, .columns-section .pros .column {
     width: 50%;
   }
 }
 @media (min-width: 992px) {
-  .cons .column,
-  .pros .column {
+  .columns-section .cons .column, .columns-section .pros .column {
     width: 500px;
   }
 }
 @media (max-width: 767px) {
-  .column p {
+  .columns-section .column p {
     padding-left: 10px;
   }
 }
-.quick-cont {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  position: relative;
-}
 
-.quick-section {
-  display: flex;
-  grid-gap: 10px;
-  box-sizing: border-box;
-}
-
+/* Common styles for all screen sizes */
 body {
   background-color: #f9f7f3;
 }
@@ -1174,10 +1155,6 @@ body {
   color: #2c3e50;
   margin-bottom: 10px;
   text-transform: uppercase;
-}
-
-.title-quick span {
-  text-decoration: underline;
 }
 
 .co {
@@ -1224,6 +1201,9 @@ body {
 .link a:hover {
   color: #1b094d;
 }
+.link a:hover::after {
+  transform: scaleX(1);
+}
 .link a::after {
   content: "";
   position: absolute;
@@ -1235,9 +1215,6 @@ body {
   transform: scaleX(0);
   transition: transform 0.2s;
   transform-origin: left;
-}
-.link a:hover::after {
-  transform: scaleX(1);
 }
 
 .thumb-up {
@@ -1664,29 +1641,28 @@ body {
 }
 .parallax-section .parallax-content {
   position: absolute;
-  width: 530px;
+  width: 90%;
+  max-width: 530px;
   top: 50%;
-  left: 70%;
-  transform: translate(-50%, -75%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: #fff;
-}
-.parallax-section .parallax-content h2 {
-  font-size: 60px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: black;
+  text-align: center;
+  padding: 20px;
   background-color: rgba(255, 255, 255, 0.8);
-}
-.parallax-section .parallax-content p {
-  font-size: 35px;
-  margin-bottom: 0;
-  font-weight: 600;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 10px 20px;
   border-radius: 5px;
 }
-
+.parallax-section .parallax-content h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.parallax-section .parallax-content p {
+  font-size: 24px;
+  margin-bottom: 0;
+  font-weight: 600;
+  padding: 10px 15px;
+}
 @media (max-width: 768px) {
   .parallax-section .parallax-content {
     max-width: 80%;
@@ -1710,108 +1686,71 @@ body {
     padding: 10px;
   }
 }
+
 .testimonial-section {
   background-color: #F8FAFC;
   margin: 10px;
   padding: 0 10px;
+  overflow-x: auto; /* Enable horizontal scrolling on smaller screens */
 }
-
-.testimonial-wrapper {
+.testimonial-section .testimonial-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
   margin-top: 20px;
+  gap: 20px;
+  justify-content: flex-start; /* Start from the left */
 }
-
-.testimonial-wrapper .card {
-  width: 100%;
-  max-width: 320px;
+.testimonial-section .testimonial-wrapper .card {
+  width: 180px; /* Set a fixed width */
+  max-width: 20%; /* Display all three testimonials on smartphones */
   border-radius: 16px;
   background: #FFF;
   box-shadow: 1px 3px 4px 1px rgba(0, 0, 0, 0.25);
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 20px;
   overflow: hidden;
 }
-
-.testimonial-wrapper .card .user-image {
+.testimonial-section .testimonial-wrapper .card .user-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
 }
-
-.testimonial-wrapper .card .user-image img {
+.testimonial-section .testimonial-wrapper .card .user-image img {
   border-radius: 30px;
   background: #D9D9D9;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-.testimonial-wrapper .card .user-content {
-  margin-top: 20px;
+.testimonial-section .testimonial-wrapper .card .user-content {
+  margin-top: 10px;
 }
-
-.testimonial-wrapper .card .user-content h4 {
-  color: #000;
-  text-align: center;
-  font-family: Inter;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 28px;
-  margin-bottom: 7px;
+.testimonial-section .testimonial-wrapper .card .user-content h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
-
-.testimonial-wrapper .card .user-content span {
-  font-size: 12px;
+.testimonial-section .testimonial-wrapper .card .user-content span {
+  font-size: 10px;
   color: #999;
 }
-
-.testimonial-wrapper .card .user-content p {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333333;
-  background-color: #ffffff;
-  border-radius: 8px;
-  font-weight: 400;
-  line-height: 22px;
-  word-spacing: 1px;
-  text-align: justify;
-  padding: 10px;
+.testimonial-section .testimonial-wrapper .card .user-content p {
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 5px;
 }
-
-.row {
-  padding-bottom: 18px;
-}
-
-.h1-testimonials {
-  padding-top: 30px;
-  color: #000;
-  font-family: Inter;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 36px;
+.testimonial-section .h1-testimonials {
+  padding-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
   text-align: center;
 }
-
-@media (min-width: 769px) {
-  .testimonial-wrapper {
-    justify-content: space-between;
-  }
-  .testimonial-wrapper .card {
-    max-width: 285px;
-    margin: 0 0 20px;
-  }
-}
 @media (max-width: 768px) {
-  .testimonial-wrapper .card {
-    max-width: 45%;
+  .testimonial-section .testimonial-wrapper .card {
+    max-width: 50%; /* Display all three testimonials on smartphones */
   }
 }
+
 .banner-items {
   display: flex;
   justify-content: space-between;

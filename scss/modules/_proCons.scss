@@ -1,6 +1,7 @@
 $green: #008000;
 $red: #FF0000;
 
+/* Common styles for all screen sizes */
 .fas.fa-thumbs-up,
 .fas.fa-thumbs-down {
   font-size: 24px;
@@ -12,58 +13,58 @@ $red: #FF0000;
   justify-content: space-between;
   flex-direction: column;
   margin-top: 20px;
-}
 
-.column {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  p {
-    padding-left: 20px;
-    font-size: 16px;
-    width: 95%;
+  .column {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      padding-left: 20px;
+      font-size: 16px;
+      width: 95%;
+    }
   }
-}
 
-.cons .column {
-  width: 500px;
-  height: 43px;
-  margin-bottom: 10px;
-  border-radius: 15px;
-  background: linear-gradient(to right, $red 0%, $red 5px, rgba(255, 0, 0, 0.1) 5px, rgba(255, 0, 0, 0.1) 100%);
-}
+  .cons, .pros {
+    .column {
+      width: 100%;
+      height: 43px;
+      margin-bottom: 10px;
+      border-radius: 15px;
 
-.pros .column {
-  width: 500px;
-  height: 43px;
-  margin-bottom: 10px;
-  border-radius: 15px;
-  background: linear-gradient(to right, $green 0%, $green 5px, rgba(0, 128, 0, 0.1) 5px, rgba(0, 128, 0, 0.1) 100%);
-}
+      &:nth-child(odd) {
+        background: linear-gradient(to right, rgba(255, 0, 0, 0.1) 5px, #FF0000 5px, #FF0000 95%, rgba(255, 0, 0, 0.1) 95%);
+      }
 
+      &:nth-child(even) {
+        background: linear-gradient(to right, rgba(0, 128, 0, 0.1) 5px, #008000 5px, #008000 95%, rgba(0, 128, 0, 0.1) 95%);
+      }
+    }
+  }
 
-
-@media (min-width: 768px) {
-  .columns-section {
+  @media (min-width: 768px) {
     flex-direction: row;
+
+    .cons, .pros {
+      .column {
+        width: 50%;
+      }
+    }
   }
 
-  .cons .column,
-  .pros .column {
-    width: 50%;
+  @media (min-width: 992px) {
+    .cons, .pros {
+      .column {
+        width: 500px;
+      }
+    }
   }
-}
 
-@media (min-width: 992px) {
-  .cons .column,
-  .pros .column {
-    width: 500px;
-  }
-}
-
-@media (max-width: 767px) {
-  .column p {
-    padding-left: 10px;
+  @media (max-width: 767px) {
+    .column {
+      p {
+        padding-left: 10px;
+      }
+    }
   }
 }
