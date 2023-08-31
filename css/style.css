@@ -3111,6 +3111,24 @@ h1.toplist-section {
 .post-content {
   flex-grow: 1;
 }
+/* Styling for custom pagination links */
+.pagination-slide .pagination_count .prev,
+.pagination-slide .pagination_count .next {
+    display: inline-block;
+    padding: 5px 8px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin: 0 3px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.pagination-slide .pagination_count .prev:hover,
+.pagination-slide .pagination_count .next:hover {
+    background-color: #ddd;
+}
 
 .post h1 {
   padding-bottom: 88px;
