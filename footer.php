@@ -1,6 +1,5 @@
-<?php if (!is_search() || (!is_search() && have_posts())) : ?>
-
-<?php include(__DIR__ . '/sections/author.php'); ?>
+<?php if (!is_search() && have_posts() && !is_single()) : ?>
+    <?php include(__DIR__ . '/sections/author.php'); ?>
 <?php endif; ?>
 
 <footer>
