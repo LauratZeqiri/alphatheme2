@@ -56,20 +56,37 @@
         <ul class="pagination_count">
       
             
-             <?php
-             
-              $big = 999999999; 
-             echo paginate_links(array(
-                 'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                 'format' => '/page/%#%', // Use '/page/%#%' for pretty permalinks
-                 'current' => max(1, $paged),
-                 'total' => $maxpage,
-                 'prev_next' => true,
-                 'prev_text' => __('&laquo;'),
-                 'next_text' => __('&raquo;'),
-                 'type' => 'list',
-             ));
-             ?>
+        <?php
+$big = 999999999; 
+
+$paginate_links = paginate_links(array(
+    'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+    'format' => '/page/%#%', // Use '/page/%#%' for pretty permalinks
+    'current' => max(1, $paged),
+    'total' => $maxpage,
+    'prev_next' => true,
+    'prev_text' => __('&laquo;'),
+    'next_text' => __('&raquo;'),
+    'type' => 'list',
+));
+
+if (have_posts()) {
+    // Display search results or other posts
+    while (have_posts()) {
+        the_post();
+        // Display individual post content
+    }
+
+    // Display pagination links if there are multiple pages
+    if ($paginate_links) {
+        echo $paginate_links;
+    }
+} else {
+    echo 'No posts found!';
+}
+?>
+
+
         </ul>
     </nav>
 </div>
