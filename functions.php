@@ -142,7 +142,9 @@ function events_post_type() {
 }
 add_action( 'init', 'events_post_type' );
 
-
+if (file_exists(get_stylesheet_directory() . '/acf-export/acf-events.php')) {
+    include_once(get_stylesheet_directory() . '/acf-export/acf-events.php');
+}
 function blog_scripts() {
     // Register the script
     // wp_register_script('custom-script', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), false, true);
