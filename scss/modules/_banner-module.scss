@@ -64,7 +64,46 @@ top: 320px;
  }
 
 
-
+ @media (max-width: 768px) {
+    .banner-items {
+      justify-content: flex-start;
+    }
+    .banner-content {
+      width: 47%;
+    }
+    .title-banner h1 {
+      font-size: 26px;
+      line-height: 54px;
+    }
+    .banner-foto {
+      width: 0%;
+    }
+    .container {
+      width: 652px !important;
+    }
+    .description-banner {
+      font-size: 13px;
+      line-height: 23px;
+      width: 95%;
+    }
+  }
+  @media (max-width: 480px) {
+    .banner-items {
+      display: grid;
+      padding: 0px 16px;
+    }
+    .banner-foto img {
+      width: 274px;
+      height: 243px;
+    }
+    .banner-section {
+      padding: 0px 0px 34px 0px;
+    }
+    .banner-writen {
+      top: 335px;
+      right: 363px;
+    }
+  }
 
 // .title-banner{
 //     color: Black;

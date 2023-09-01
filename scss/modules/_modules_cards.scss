@@ -1,9 +1,9 @@
+
 .new-custom-cards-container {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
- 
 }
 
 .new-custom-card-page,
@@ -67,8 +67,7 @@
     border: none;
     cursor: pointer;
     z-index: 1;
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
+
     
 }
 
@@ -78,11 +77,11 @@
 }
 
 .new-custom-cards-container .slick-prev {
-    left: -5%;
+    left: -3%;
 }
 
 .new-custom-cards-container .slick-next {
-    right: -5%;
+    right: -3%;
 }
 
 .new-custom-cards-container .slick-prev:before,
@@ -90,9 +89,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 900;
     text-align: center;
-    color: #8CC0DE; 
+    color: #000; 
 }
-

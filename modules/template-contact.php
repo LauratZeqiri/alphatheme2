@@ -42,11 +42,11 @@ if(isset($_POST['submit']) && !empty($_POST['submit'])){
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = 587;
 
-    $mail->Username = "laurat.zeqiri1@student.uni-pr.edu";
-    $mail->Password = "test";
+    $mail->Username = "a.agushi23@gmail.com";
+    $mail->Password = "Almedin123!";
     $mail->setFrom($email, $name); 
 
-    $mail->addAddress("laurat.zeqiri1@student.uni-pr.edu", "Laurat");
+    $mail->addAddress("a.agushi23@gmail.com", "Alpha");
     $mail->addReplyTo($email, $name);
     $mail->Subject = $subject;
     $mail->Body = $message;

@@ -38,7 +38,7 @@ $titull = get_sub_field('field_64d258aab7833');
                         <?php echo get_the_post_thumbnail($business->ID, 'thumbnail'); ?>
                     </div>
                     <h3><?php echo get_the_title($business->ID); ?></h3>
-                    <button class="new-custom-btn"><a class="new-custom-link" href="<?php echo get_permalink($business->ID); ?>">Shiko Biznesin</a></button>
+                    <button class="new-custom-btn"><a class="new-custom-link" href="<?php echo get_permalink($business->ID); ?>">View more</a></button>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -54,7 +54,7 @@ $titull = get_sub_field('field_64d258aab7833');
                         <?php echo get_the_post_thumbnail($service->ID, 'thumbnail'); ?>
                     </div>
                     <h3><?php echo get_the_title($service->ID); ?></h3>
-                    <button class="new-custom-btn"><a class="new-custom-link" href="<?php echo get_permalink($service->ID); ?>">Lexo më shumë</a></button>
+                    <button class="new-custom-btn"><a class="new-custom-link" href="<?php echo get_permalink($service->ID); ?>">View more</a></button>
                 </div>
             <?php endforeach; ?>
         </div>
