@@ -1,7 +1,7 @@
 
 <div class="pro-section">
   <div class="container">
-<h1 class="pro-h1">PROS & CONS </h1>
+<h1>PROS & CONS </h1>
     <table>
       <tr>
         <td>

@@ -1538,11 +1538,33 @@
   padding: 10px;
 }
 
-/* Common styles for all screen sizes */
-.fas.fa-thumbs-up,
-.fas.fa-thumbs-down {
+.fas.fa-thumbs-up {
+  color: #008000;
   font-size: 24px;
   margin-right: 12px;
+}
+
+.fas.fa-thumbs-down {
+  color: #FF0000;
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.pros,
+.cons {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.column p {
+  padding-left: 20px;
+  font-size: 16px;
+  width: 95%;
 }
 
 .columns-section {
@@ -1551,45 +1573,21 @@
   flex-direction: column;
   margin-top: 20px;
 }
-.columns-section .column {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.columns-section .column p {
-  padding-left: 20px;
-  font-size: 16px;
-  width: 95%;
-}
-.columns-section .cons .column, .columns-section .pros .column {
-  width: 100%;
+
+.cons .column {
+  width: 500px;
   height: 43px;
   margin-bottom: 10px;
   border-radius: 15px;
+  background: linear-gradient(to right, #FF0000 0%, #FF0000 5px, rgba(255, 0, 0, 0.1) 5px, rgba(255, 0, 0, 0.1) 100%);
 }
-.columns-section .cons .column:nth-child(odd), .columns-section .pros .column:nth-child(odd) {
-  background: linear-gradient(to right, rgba(255, 0, 0, 0.1) 5px, #FF0000 5px, #FF0000 95%, rgba(255, 0, 0, 0.1) 95%);
-}
-.columns-section .cons .column:nth-child(even), .columns-section .pros .column:nth-child(even) {
-  background: linear-gradient(to right, rgba(0, 128, 0, 0.1) 5px, #008000 5px, #008000 95%, rgba(0, 128, 0, 0.1) 95%);
-}
-@media (min-width: 768px) {
-  .columns-section {
-    flex-direction: row;
-  }
-  .columns-section .cons .column, .columns-section .pros .column {
-    width: 50%;
-  }
-}
-@media (min-width: 992px) {
-  .columns-section .cons .column, .columns-section .pros .column {
-    width: 500px;
-  }
-}
-@media (max-width: 767px) {
-  .columns-section .column p {
-    padding-left: 10px;
-  }
+
+.pros .column {
+  width: 500px;
+  height: 43px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  background: linear-gradient(to right, #008000 0%, #008000 5px, rgba(0, 128, 0, 0.1) 5px, rgba(0, 128, 0, 0.1) 100%);
 }
 
 /* Common styles for all screen sizes */
@@ -2450,7 +2448,7 @@ h1.toplist-section {
   flex-direction: row;
   padding: 20px;
   border-radius: 10px;
-  background-color: #f9f6f2;
+  background-color: #f5f5f5;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -2478,6 +2476,7 @@ h1.toplist-section {
 }
 
 .post h1 {
+  width: 60px;
   margin-left: 20px;
   font-size: 20px;
   font-weight: bold;
@@ -2507,6 +2506,7 @@ h1.toplist-section {
   box-shadow: 0 1px 4px rgba(99, 96, 96, 0.2);
   letter-spacing: 1.5px;
   color: black;
+  background-color: white;
 }
 
 .post .textare:before,
@@ -2782,15 +2782,14 @@ a.permalink-bus:hover {
   padding: 15px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  flex-basis: calc(30.33% - 40px);
-  max-width: calc(30.33% - 40px);
+  width: 400px;
   margin-bottom: 20px;
 }
 
 .event-thumbnail {
   margin-left: 17px;
   position: relative;
-  width: 100px; /* Adjust the width */
+  width: 70%; /* Adjust the width */
   height: 100px; /* Adjust the height */
   border-radius: 50%;
   overflow: hidden;
@@ -2801,6 +2800,12 @@ a.permalink-bus:hover {
   background-color: #3d3d3b;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-thumbnail img {
+  object-fit: cover;
+  width: 150px;
+  height: 100px;
 }
 
 /* Rest of the code remains the same */
