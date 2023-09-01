@@ -25,7 +25,7 @@
             <div class="post" data-id= "<?php echo $id; ?>">
             <img src="<?php echo $featured_image; ?>" class="toplist_thumbnail">
                 <h1><?= $title; ?></h1>
-                <div class="textare"><?php echo esc_html($oneliner); ?></div>
+                <div class="textare"> <?php echo implode(' ', array_slice(explode(' ', $oneliner), 0, 30)) . '...'; ?></div>
               
                 <a href="<?php echo $permalink; ?>" class="permalink-bus">Visit Business</a>
             </div>
